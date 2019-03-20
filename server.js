@@ -9,7 +9,7 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-app.use('/api/v1', routes)
+app.use('/api/v1/user', routes)
 
 app.use(express.static(`${__dirname}/client/build`))
 
