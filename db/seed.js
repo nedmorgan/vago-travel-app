@@ -14,7 +14,7 @@ const malaysia = new Country({
 })
 
 const vietnam = new Country({
-  name: 'Vietname'
+  name: 'Vietnam'
 })
 
 const mexico = new Country({
