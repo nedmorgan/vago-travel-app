@@ -4,41 +4,32 @@ Through this application you are able to explore different countries around the 
 
 [Deployed Heroku Site](https://rocky-sierra-50409.herokuapp.com/)
 
-[Trello](https://trello.com/b/OZiwvSq2/foster-find)
+[Trello](https://trello.com/b/sPnKPtKq/vago)
 
 ## Vago Features:
 
 * The user is able to add their name and view their user information.
+* The user is able to edit the name of their account
 * The user can also delete their account.
-* In the application the user can view a dashboard that lists the fosters available for adoption.
-* The user can view adoptable fosters in more detail on an individual page.
-* The user can edit a fosters's information and remove the foster from the index page.
-* The user can view a dashboard of shelters.
-* The user can add a new shelter and delete a shelter from the list.
-* The user can add a foster to a shelter if no association exists.
+* In the application the user can view a profile page where they can add countries they would like to search for.
+* The user can click on a country that they would like to view and be forwarded to a country specific view with more information about that country.
+* The user can add a certain country to a list of places they would like to visit.
+* The user can remove a country if they are no longer interested in visiting.
+* The user can click a link to be forwarded to an outside page to view flight information.
 
 ## Wireframe:
 
-### Landing Page
-<img src='media/landing_page.jpg' alt='landing page' height=250 width=200/>
+### Home Page
+<img src='media/vago_homepage.jpg' alt='landing page' height=250 width=200/>
 
 ### User Page
-<img src='media/user_page.jpg' alt='user page' height=250 width=200/>
+<img src='media/vago_userpage.jpg' alt='user page' height=250 width=200/>
 
-### Foster Page Dashboard
-<img src='media/foster_dashboard.jpg' alt='foster page dashboard' height=250 width=200/>
-
-### Individual Foster Page
-<img src='media/individual_foster_page.jpg' alt='individual foster page' height=250 width=200/>
-
-### Shelter Page Dashboard
-<img src='media/shelter_dashboard.jpg' alt='shelter page dashboard' height=250 width=200/>
-
-### Individual Shelter Page
-<img src='media/shelter_page.jpg' alt='individual shelter page' height=250 width=200/>
+### Country Specific Page
+<img src='media/vago_country_specific_page.jpg' alt='country specific page' height=250 width=200/>
 
 ### ERD
-<img src='media/erd.jpg' alt='erd page' height=250 width=200/>
+<img src='media/vago_erd.jpg' alt='erd page' height=250 width=200/>
 
 ## Technologies:
 
@@ -52,10 +43,11 @@ Through this application you are able to explore different countries around the 
 
 #### Current Features
 
-* Able to create, read, and delete user
-* Able to create, edit, update, and delete fosters
-* Able to create, read, and delete shelters
-* Able to add a foster to a shelter via the specific shelter show page
+* Able to create, read, edit, and delete user
+* Able to have single user access to the content
+* Able to create, edit, update, and delete a country
+* Able to add a country to a list of favorites
+* Able to link to an outside site to view flights
 
 ___
 
