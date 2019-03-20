@@ -1,0 +1,28 @@
+{
+  "name": "vago-travel-app",
+  "version": "1.0.0",
+  "description": "Through this application you are able to explore different countries around the world before you book your ticket and go wandering. You can save countries that you want to visit in MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nedmorgan/vago-travel-app.git"
+  },
+  "keywords": ["travel", "explore", "wander", "sightseeing", "trip", "vacation"],
+  "author": "Nathaniel Morgan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nedmorgan/vago-travel-app/issues"
+  },
+  "homepage": "https://github.com/nedmorgan/vago-travel-app#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19",
+    "morgan": "^1.9.1"
+  }
+}
