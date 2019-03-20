@@ -18,7 +18,7 @@ router.post('/', appController.create)
 // Show the users dashboard page
 router.get('/:userId', userController.index)
 
-// This will post a new country to the database
+// This will post a new country to the my countries field
 router.post('/:userId/countries', userController.create)
 
 // Update a user in the database
@@ -37,5 +37,7 @@ router.delete('/:userId/countries/:countryId', userController.deleteCountry)
 
 // Page that will list an individual country
 router.get('/:userId/countries/:countryId', countryController.index)
+
+router.post('/:userId/countries/:countryId', countryController.favorite)
 
 module.exports = router
