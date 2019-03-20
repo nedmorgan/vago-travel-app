@@ -1,8 +1,12 @@
-const express = require('express')
-const router = express.Router()
+const User = require('../models/User')
 
-router.get('/', (req, res) => {
-  res.send('This is the homepage page for Vago')
-})
+const appController = {
+  index: (req, res) => {
+    res.send('This is the homepage page for Vago')
+  },
+  create: (req, res) => {
+    res.send('Action to post a new user to the database')
+  },
+}
 
-module.exports = router
+module.exports = appController
