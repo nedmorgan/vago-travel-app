@@ -29,7 +29,7 @@ export const NavContainer = styled.div`
 
   i {
     font-size: 6vw;
-    margin-left: 1.25vw;
+    margin-left: 1.5vw;
     margin-top: 1.25vw;
   }
 `
