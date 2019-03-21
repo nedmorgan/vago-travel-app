@@ -22,9 +22,13 @@ export default class NavBar extends Component {
         {
           this.state.isSignedIn ?
             <nav className="nav-bar">
-              <Link to="/:userId">{this.state.user.name}'s Dashboard</Link>
+              <h1>Vago</h1>
+              <Link to={`/${this.state.user._id}`}>{this.state.user.name}'s Dashboard</Link>
             </nav>
-            : null
+            :
+            <nav className="nav-bar">
+              <h1>Vago</h1>
+            </nav>
         }
       </div>
     )
