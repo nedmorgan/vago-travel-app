@@ -3,7 +3,11 @@ const Country = require('../models/Country')
 
 const userController = {
   index: (req, res) => {
-    res.send('This is the dashboard page for the user and will show the username and countries associated')
+    User.find().then((user) => {
+      res.json(user)
+    }).catch((err) => {
+      console.log(err)
+    })
   },
   create: (req, res) => {
     res.send('Action to post a new user to the database')
