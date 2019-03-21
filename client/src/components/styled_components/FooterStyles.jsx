@@ -5,6 +5,9 @@ export const FooterContainer = styled.div`
   justify-content: center;
   border-top: 1px solid black;
   background-color: #fafafa;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 
   footer {
     margin-top: 1.5vw;
