@@ -20,8 +20,11 @@ router.delete('/:userId', userController.delete)
 
 // Country Controller
 
+// This will get all of the countries for that user
+router.get('/:userId/countries', countryController.index)
+
 // Page that will list an individual country
-router.get('/:userId/countries/:countryId', countryController.index)
+router.get('/:userId/countries/:countryId', countryController.show)
 
 // This will post a new country to the my countries field
 router.post('/:userId/countries', countryController.create)
