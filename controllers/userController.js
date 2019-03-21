@@ -18,6 +18,14 @@ const userController = {
         console.log('Something wrong posting: ', err)
       })
   },
+  show: (req, res) => {
+    User.findById(req.params.userId)
+      .then(user => {
+        res.json(user)
+      }).catch((err) => {
+        console.log("Can't find that user bro: ", err)
+      })
+  },
   update: (req, res) => {
     const user = req.params.userId
     const updatedUser = req.body
