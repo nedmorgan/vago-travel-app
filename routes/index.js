@@ -33,7 +33,7 @@ router.post('/:userId/countries', countryController.create)
 router.post('/:userId/countries/:countryId', countryController.favorite)
 
 // Update a country in the database
-router.put('/:userId/countries/:countryId', countryController.update)
+router.patch('/:userId/countries/:countryId', countryController.update)
 
 // Delete a country from the database
 router.delete('/:userId/countries/:countryId', countryController.delete)

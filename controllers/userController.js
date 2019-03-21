@@ -6,7 +6,7 @@ const userController = {
     User.find().then((user) => {
       res.json(user)
     }).catch((err) => {
-      console.log(err)
+      console.log("Ewwww, that's not right: ", err)
     })
   },
   create: (req, res) => {

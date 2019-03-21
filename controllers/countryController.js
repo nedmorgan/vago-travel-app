@@ -29,13 +29,42 @@ const countryController = {
           .then(user => {
             res.json(newCountry)
           })
+      }).catch((err) => {
+        console.log("Danger Will Robinson: ", err)
       })
   },
   favorite: (req, res) => {
-    res.send('This will add a new country to my favorites field')
+    User.findById(req.params.userId)
+      .then(user => {
+        const countries = user.countries
+        const country = countries.filter((country) => {
+          return country._id == req.params.countryId
+        })
+        console.log(country[0])
+        user.favorites.push(country[0])
+        user.save()
+          .then(user => {
+            res.json(user)
+          })
+      }).catch((err) => {
+        console.log("Somethangs wrong round these parts: ", err)
+      })
   },
   update: (req, res) => {
-    res.send('This will update the name of a country in the database')
+    User.findById(req.params.userId)
+    then(user => {
+      const updatedCountry = user.countries.filter(country => country._id.toString() === req.params.countryId)
+      updatedCountry = Country.findByIdAndUpdate(req.params.countryId, req.body, {
+        new: true
+      })
+      user.countries.push(updatedCountry)
+      user.save()
+        .then(user => {
+          req.json(updatedCountry)
+        })
+    }).catch((err) => {
+      console.log("Woopsies: ", err)
+    })
   },
   delete: (req, res) => {
     User.findById(req.params.userId)
@@ -45,6 +74,8 @@ const countryController = {
         user.save().then(user => {
           res.json(user.countries)
         })
+      }).catch((err) => {
+        console.log("Somethings fishy: ", err)
       })
   },
 }
