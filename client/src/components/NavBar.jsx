@@ -10,8 +10,8 @@ export default class NavBar extends Component {
 
   componentDidMount = () => {
     axios.get('/api/v1/user').then(response => {
-      console.log(response)
-      const user = response.data
+      console.log(response.data[0])
+      const user = response.data[0]
       this.setState({ user })
     })
   }
@@ -22,7 +22,7 @@ export default class NavBar extends Component {
         {
           this.state.isSignedIn ?
             <nav className="nav-bar">
-              <Link to="/:userId">Dashboard</Link>
+              <Link to="/:userId">{this.state.user.name}'s Dashboard</Link>
             </nav>
             : null
         }
