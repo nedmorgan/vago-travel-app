@@ -9,7 +9,6 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
-          <h1>Test</h1>
         </div>
       </Router>
     );
