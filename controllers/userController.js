@@ -10,7 +10,14 @@ const userController = {
     })
   },
   create: (req, res) => {
-    res.send('Action to post a new user to the database')
+    const newUser = new User(req.body)
+    newUser
+      .save()
+      .then((user) => {
+        res.json(user)
+      }).catch((err) => {
+        console.log('Something wrong posting: ', err)
+      })
   },
   update: (req, res) => {
     res.send('Action to update a user in the database')
