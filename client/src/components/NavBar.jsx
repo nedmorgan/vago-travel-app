@@ -24,7 +24,7 @@ export default class NavBar extends Component {
           this.state.isSignedIn ?
             <NavContainer >
               <div>
-                <h1>Vago</h1>
+                <h1><a href="/">Vago</a></h1>
                 <i class="fas fa-passport"></i>
               </div>
               <Link className="user-link" to={`/${this.state.user._id}`}>{this.state.user.name}'s Dashboard</Link>

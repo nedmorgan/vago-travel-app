@@ -32,4 +32,8 @@ export const NavContainer = styled.div`
     margin-left: 1.5vw;
     margin-top: 1vw;
   }
+
+  a {
+    color: black;
+  }
 `
