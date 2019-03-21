@@ -40,7 +40,6 @@ const countryController = {
         const country = countries.filter((country) => {
           return country._id == req.params.countryId
         })
-        console.log(country[0])
         user.favorites.push(country[0])
         user.save()
           .then(user => {
@@ -52,19 +51,14 @@ const countryController = {
   },
   update: (req, res) => {
     User.findById(req.params.userId)
-    then(user => {
-      const updatedCountry = user.countries.filter(country => country._id.toString() === req.params.countryId)
-      updatedCountry = Country.findByIdAndUpdate(req.params.countryId, req.body, {
-        new: true
+      .then(user => {
+        const updatedCountry = user.countries.id(req.params.countryId)
+        updatedCountry.set(req.body)
+        user.save()
+        res.json(updatedCountry)
+      }).catch((err) => {
+        console.log("Woopsies: ", err)
       })
-      user.countries.push(updatedCountry)
-      user.save()
-        .then(user => {
-          req.json(updatedCountry)
-        })
-    }).catch((err) => {
-      console.log("Woopsies: ", err)
-    })
   },
   delete: (req, res) => {
     User.findById(req.params.userId)
