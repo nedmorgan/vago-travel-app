@@ -21,7 +21,15 @@ const countryController = {
       })
   },
   create: (req, res) => {
-    res.send('This will add a new country to the database')
+    User.findById(req.params.userId)
+      .then(user => {
+        const newCountry = new Country(req.body)
+        user.countries.push(newCountry)
+        user.save()
+          .then(user => {
+            res.json(newCountry)
+          })
+      })
   },
   favorite: (req, res) => {
     res.send('This will add a new country to my favorites field')
