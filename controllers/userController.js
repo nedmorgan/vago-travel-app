@@ -20,7 +20,15 @@ const userController = {
       })
   },
   update: (req, res) => {
-    res.send('Action to update a user in the database')
+    const user = req.params.userId
+    const updatedUser = req.body
+    User.findByIdAndUpdate(user, updatedUser, {
+      new: true
+    }).then(user => {
+      res.json(user)
+    }).catch((err) => {
+      console.log('Error updating user: ', err)
+    })
   },
   delete: (req, res) => {
     User.findByIdAndRemove(req.params.userId).then(user => {
