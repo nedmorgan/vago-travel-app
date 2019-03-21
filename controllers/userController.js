@@ -16,8 +16,12 @@ const userController = {
     res.send('Action to update a user in the database')
   },
   delete: (req, res) => {
-    res.send('Action to delete a user from the database')
-  },
+    User.findByIdAndRemove(req.params.userId).then(user => {
+      res.json(user)
+    }).catch((err) => {
+      console.log('Error deleting: ', err)
+    })
+  }
 }
 
 module.exports = userController
