@@ -33,7 +33,7 @@ export const NavContainer = styled.div`
     margin-top: 1vw;
   }
 
-  a {
+  .home-link {
     color: black;
   }
 `
