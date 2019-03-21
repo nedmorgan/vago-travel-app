@@ -30,7 +30,14 @@ const countryController = {
     res.send('This will update the name of a country in the database')
   },
   delete: (req, res) => {
-    res.send('This will delete a country from the database')
+    User.findById(req.params.userId)
+      .then(user => {
+        const specificCountries = user.countries.filter(country => country._id.toString() !== req.params.countryId)
+        user.countries = specificCountries
+        user.save().then(user => {
+          res.json(user.countries)
+        })
+      })
   },
 }
 
