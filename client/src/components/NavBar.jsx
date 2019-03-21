@@ -9,7 +9,7 @@ export default class NavBar extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('/api/v1/users').then(response => {
+    axios.get('/api/v1/user').then(response => {
       console.log(response)
       const user = response.data
       this.setState({ user })

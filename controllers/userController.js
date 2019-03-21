@@ -1,5 +1,4 @@
 const User = require('../models/User')
-const Country = require('../models/Country')
 
 const userController = {
   index: (req, res) => {

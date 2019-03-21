@@ -6,8 +6,8 @@ const countryController = require('../controllers/countryController')
 
 // User Controller
 
-// Show the users dashboard page
-router.get('/:userId', userController.index)
+// Show the main dashboard page
+router.get('/', userController.index)
 
 // Action to create a new user in the database
 router.post('/', userController.create)
