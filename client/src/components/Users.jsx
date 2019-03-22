@@ -5,6 +5,10 @@ import { UsersContainer } from './styled_components/UsersStyles'
 
 export default class Users extends Component {
 
+  state = {
+    users: []
+  }
+
   componentDidMount = () => {
     console.log('Component Mounted')
     this.getAllUsers()
@@ -12,18 +16,19 @@ export default class Users extends Component {
 
   getAllUsers = () => {
     axios.get('/api/v1/users').then(response => {
-      console.log(response)
       this.setState({ users: response.data })
     })
   }
 
-  state = {
-    users: []
-  }
   render() {
     return (
       <UsersContainer>
-        <h1>Test</h1>
+        <h1>Select your journey!</h1>
+        <div className="user-flex">
+          {this.state.users.map((user) => {
+            return (<div className="user-container"><Link className="user-link waves-effect waves-light btn-large" key={user._id} to={`/users/${user._id}`}><i class="material-icons left">flight_takeoff</i>{user.name}</Link></div>)
+          })}
+        </div>
       </UsersContainer>
     )
   }
