@@ -7,6 +7,7 @@ export const UserContainer = styled.div`
   
   h1, h3 {
     font-family: 'Lato', sans-serif;
+    color: whitesmoke;
   }
 
   .country-flex {

@@ -8,5 +8,6 @@ export const HomeContainer = styled.div`
   h1, h2, .signup-link {
     font-family: 'Lato', sans-serif;
     text-align: center;
+    color: whitesmoke;
   }
 `

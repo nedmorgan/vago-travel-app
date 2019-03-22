@@ -5,6 +5,7 @@ export const LogInContainer = styled.div`
     font-family: 'Lato', sans-serif;
     text-align: center;
     font-size: 6vw;
+    color: whitesmoke;
   }
 
   .form-container {

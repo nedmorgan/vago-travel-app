@@ -1,3 +1,15 @@
+#app {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),
+    url("./media/thai_boats.jpg");
+  background-size: 100vw 100vh;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* https://farm2.staticflickr.com/1817/43954953482_b2eb18299e_k.jpg */
+
 body {
   margin: 0;
   padding: 0;
