@@ -9,13 +9,13 @@ export default class NavBar extends Component {
     user: [],
   }
 
-  componentDidMount = () => {
-    axios.get('/api/v1/user').then(response => {
-      console.log(response.data[0])
-      const user = response.data[0]
-      this.setState({ user })
-    })
-  }
+  // componentDidMount = () => {
+  //   axios.get('/api/v1/users').then(response => {
+  //     console.log(response.data[0])
+  //     const user = response.data[0]
+  //     this.setState({ user })
+  //   })
+  // }
 
   render() {
     return (

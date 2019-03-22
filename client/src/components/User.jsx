@@ -4,6 +4,19 @@ import axios from 'axios'
 import { UserContainer } from './styled_components/UserStyles'
 
 export default class User extends Component {
+  state = {
+    user: {},
+  }
+
+  componentDidMount = () => {
+    console.log(this.props.match.params.userId)
+    axios.get(`/api/v1/users/${this.props.match.params.userId}`).then(response => {
+      console.log(response.data)
+      this.setState({ user: response.data })
+      console.log(this.state.user)
+    })
+  }
+
   render() {
     return (
       <div>
