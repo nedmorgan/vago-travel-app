@@ -10,12 +10,35 @@ export default class User extends Component {
       favorites: [],
     },
     redirectToUsers: false,
+    displayEditForm: false,
   }
 
   componentDidMount = () => {
     axios.get(`/api/v1/users/${this.props.match.params.userId}`).then(response => {
       this.setState({ user: response.data, redirectToUsers: false })
     })
+  }
+
+  toggleEditForm = () => {
+    this.setState((state, props) => {
+      return ({ displayEditForm: !state.displayEditForm })
+    })
+  }
+
+  handleChange = (e) => {
+    const updatedUser = { ...this.state.user }
+    updatedUser[e.target.name] = e.target.value
+    this.setState({ user: updatedUser })
+  }
+
+  updateUser = (e) => {
+    e.preventDefault()
+    axios.put(`/api/v1/users/${this.state.user._id}`, {
+      user: this.state.user
+    })
+      .then(res => {
+        this.setState({ user: res.data, displayEditForm: false })
+      })
   }
 
   deleteIdea = () => {
@@ -33,6 +56,26 @@ export default class User extends Component {
     return (
       <UserContainer>
         <h1>{this.state.user.name}'s Journey List</h1>
+        <button onClick={this.toggleEditForm}>Edit Your User Information</button>
+        {
+          this.state.displayEditForm ?
+            <form className="form-container col s12" onSubmit={this.updateUser}>
+              <div className="row">
+                <div className="col s6">
+                  <label htmlFor="name">User Name</label>
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    onChange={this.handleChange}
+                    value={this.state.user.name}
+                  />
+                </div>
+              </div>
+              <button className="waves-effect waves-light btn">Update</button>
+            </form> :
+            null
+        }
         <div className="user-info-flex">
           <h3>Countries</h3>
           <div className="country-flex">

@@ -16,4 +16,19 @@ export const UserContainer = styled.div`
   .country-button {
     margin: 1vw;
   }
+
+  .form-container {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row {
+    width: 100%;
+  }
+
+  .input-field {
+    
+  }
 `
