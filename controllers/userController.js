@@ -9,7 +9,7 @@ const userController = {
     })
   },
   create: (req, res) => {
-    const newUser = new User(req.body)
+    const newUser = new User(req.body.user)
     newUser
       .save()
       .then((user) => {
@@ -28,7 +28,7 @@ const userController = {
   },
   update: (req, res) => {
     const user = req.params.userId
-    const updatedUser = req.body
+    const updatedUser = req.body.user
     User.findByIdAndUpdate(user, updatedUser, {
       new: true
     }).then(user => {

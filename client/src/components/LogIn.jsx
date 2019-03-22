@@ -17,7 +17,7 @@ export default class LogIn extends Component {
   }
 
   createUser = () => {
-    axios.post('/api/v1/user', {
+    axios.post('/api/v1/users', {
       user: this.state.user
     }).then((res) => {
       this.setState({ redirectToHome: true, isSignedIn: true, createdUser: res.data })
@@ -37,7 +37,7 @@ export default class LogIn extends Component {
 
   render() {
     if (this.state.redirecttoUserPage) {
-      return (<Redirect to={`/user/${this.state.createdUser._id}`} />)
+      return (<Redirect to={`/users/${this.state.createdUser._id}`} />)
     }
     return (
       <LogInContainer>
@@ -47,6 +47,7 @@ export default class LogIn extends Component {
             <div className="input-field col s6">
               <label htmlFor="name">User Name</label>
               <input
+                id="name"
                 type="text"
                 name="name"
                 onChange={this.handleChange}
@@ -58,6 +59,7 @@ export default class LogIn extends Component {
             <div className="input-field col s6">
               <label htmlFor="password">Password</label>
               <input
+                id="password"
                 type="password"
                 name="password"
                 onChange={this.handleChange}

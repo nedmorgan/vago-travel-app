@@ -20,23 +20,13 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        {
-          this.state.isSignedIn ?
-            <NavContainer >
-              <div>
-                <h1><a className="home-link" href="/">Vago</a></h1>
-                <i class="fas fa-passport"></i>
-              </div>
-              <Link className="user-link" to={`/${this.state.user._id}`}>{this.state.user.name}'s Dashboard</Link>
-            </NavContainer>
-            :
-            <NavContainer >
-              <div className="nav-flex-1">
-                <h1>Vago</h1>
-                <i class="fas fa-passport"></i>
-              </div>
-            </NavContainer>
-        }
+        <NavContainer >
+          <div>
+            <h1><a className="home-link" href="/">Vago</a></h1>
+            <i class="fas fa-passport"></i>
+          </div>
+          <Link className="user-link" to="/users">User Dashboard</Link>
+        </NavContainer>
       </div>
     )
   }
