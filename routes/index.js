@@ -7,38 +7,38 @@ const countryController = require('../controllers/countryController')
 // User Controller
 
 // Show the main dashboard page
-router.get('/', userController.index)
+router.get('/users', userController.index)
 
 // Action to create a new user in the database
-router.post('/', userController.create)
+router.post('/users', userController.create)
 
 // For the user page
-router.get('/:userId', userController.show)
+router.get('/users/:userId', userController.show)
 
 // Update a user in the database
-router.put('/:userId', userController.update)
+router.put('/users/:userId', userController.update)
 
 // Delete a user from the database
-router.delete('/:userId', userController.delete)
+router.delete('/users/:userId', userController.delete)
 
 // Country Controller
 
 // This will get all of the countries for that user
-router.get('/:userId/countries', countryController.index)
+router.get('/users/:userId/countries', countryController.index)
 
 // Page that will list an individual country
-router.get('/:userId/countries/:countryId', countryController.show)
+router.get('/users/:userId/countries/:countryId', countryController.show)
 
 // This will post a new country to the my countries field
-router.post('/:userId/countries', countryController.create)
+router.post('/users/:userId/countries', countryController.create)
 
 // This will add a country into my favorites field
-router.post('/:userId/countries/:countryId', countryController.favorite)
+router.post('/users/:userId/countries/:countryId', countryController.favorite)
 
 // Update a country in the database
-router.put('/:userId/countries/:countryId', countryController.update)
+router.put('/users/:userId/countries/:countryId', countryController.update)
 
 // Delete a country from the database
-router.delete('/:userId/countries/:countryId', countryController.delete)
+router.delete('/users/:userId/countries/:countryId', countryController.delete)
 
 module.exports = router
