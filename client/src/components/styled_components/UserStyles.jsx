@@ -17,6 +17,10 @@ export const UserContainer = styled.div`
     margin: 1vw;
   }
 
+  .country-flex {
+    display: flex;
+  }
+
   .form-container {
     width: 55%;
     display: flex;
@@ -28,7 +32,7 @@ export const UserContainer = styled.div`
     width: 100%;
   }
 
-  .input-field {
-    
+  .delete-user {
+    margin-top: 4vw;
   }
 `

@@ -41,7 +41,7 @@ export default class User extends Component {
       })
   }
 
-  deleteIdea = () => {
+  deleteUser = () => {
     const userId = this.props.match.params.userId
     axios.delete(`/api/v1/users/${userId}`)
       .then(res => {
@@ -56,7 +56,7 @@ export default class User extends Component {
     return (
       <UserContainer>
         <h1>{this.state.user.name}'s Journey List</h1>
-        <button onClick={this.toggleEditForm}>Edit Your User Information</button>
+        <button className="waves-effect waves-light btn" onClick={this.toggleEditForm}>Edit Your User Information</button>
         {
           this.state.displayEditForm ?
             <form className="form-container col s12" onSubmit={this.updateUser}>
@@ -106,6 +106,7 @@ export default class User extends Component {
             }
           </div>
         </div>
+        <button className="delete-user waves-effect waves-light btn red" onClick={this.deleteUser}>Delete User</button>
       </UserContainer>
     )
   }
