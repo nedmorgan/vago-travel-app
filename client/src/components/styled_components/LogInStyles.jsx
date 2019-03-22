@@ -11,4 +11,8 @@ export const LogInContainer = styled.div`
   .form-container {
     margin-left: 2vw;
   }
+
+  .inputs {
+    color: whitesmoke;
+  }
 `

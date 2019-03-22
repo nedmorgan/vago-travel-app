@@ -90,8 +90,9 @@ export default class User extends Component {
             <form className="form-container col s12" onSubmit={this.updateUser}>
               <div className="row">
                 <div className="col s6">
-                  <label htmlFor="name">User Name</label>
+                  <label className="inputs" htmlFor="name">User Name</label>
                   <input
+                    className="inputs"
                     id="name"
                     type="text"
                     name="name"
@@ -102,8 +103,9 @@ export default class User extends Component {
               </div>
               <div className="row">
                 <div className="col s6">
-                  <label htmlFor="password">Password</label>
+                  <label className="inputs" htmlFor="password">Password</label>
                   <input
+                    className="inputs"
                     id="password"
                     type="text"
                     name="password"
@@ -123,8 +125,9 @@ export default class User extends Component {
               <form className="form-container col s12" onSubmit={this.addCountry}>
                 <div className="row">
                   <div className="input-field col s6">
-                    <label htmlFor="name">Country Name</label>
+                    <label className="inputs" htmlFor="name">Country Name</label>
                     <input
+                      className="inputs"
                       id="name"
                       type="text"
                       name="name"

@@ -4,6 +4,7 @@ export const UserContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: auto;
   
   h1, h3 {
     font-family: 'Lato', sans-serif;
@@ -46,5 +47,9 @@ export const UserContainer = styled.div`
 
   .add-country-button {
     margin-bottom: 2vw;
+  }
+
+  .inputs {
+    color: whitesmoke;
   }
 `
