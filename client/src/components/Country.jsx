@@ -6,16 +6,19 @@ import { CountryContainer } from './styled_components/CountryStyles'
 export default class Country extends Component {
   state = {
     countries: [],
-    country: {
-      name: '',
-      description: '',
-    }
+    country: {},
+  }
+
+  getSpecificCountry = () => {
+    axios.get(`/api/v1/users/${this.props.match.params.userId}/countries/${this.props.match.params.countryId}`).then(response => {
+      this.setState({ country: response.data[0] })
+    })
   }
 
   componentDidMount = () => {
+    this.getSpecificCountry()
     axios.get('https://raw.githubusercontent.com/iancoleman/cia_world_factbook_api/master/data/factbook.json').then(response => {
-      console.log(response.data.countries)
-      this.setState({countries: response.data.countries})
+      this.setState({ countries: response.data.countries })
     })
   }
 

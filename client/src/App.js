@@ -20,7 +20,7 @@ class App extends Component {
             <Route path='/login' component={LogIn} />
             <Route exact path='/users' component={Users} />
             <Route exact path='/users/:userId' component={User} />
-            <Route exact path='/users/:usedId/countries/:countryId' component={Country} />
+            <Route exact path='/users/:userId/countries/:countryId' component={Country} />
           </Switch>
           <Footer />
         </div>

@@ -9,7 +9,6 @@ export default class User extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.props.match.params.userId)
     axios.get(`/api/v1/users/${this.props.match.params.userId}`).then(response => {
       console.log(response.data)
       this.setState({ user: response.data })
