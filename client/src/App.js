@@ -7,6 +7,7 @@ import LogIn from './components/LogIn'
 import Home from './components/Home'
 import Users from './components/Users'
 import User from './components/User'
+import Country from './components/Country'
 
 class App extends Component {
   render() {
@@ -18,7 +19,8 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/login' component={LogIn} />
             <Route exact path='/users' component={Users} />
-            <Route path='/users/:userId' component={User} />
+            <Route exact path='/users/:userId' component={User} />
+            <Route exact path='/users/:usedId/countries/:countryId' component={Country} />
           </Switch>
           <Footer />
         </div>

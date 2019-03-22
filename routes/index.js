@@ -12,7 +12,7 @@ router.get('/users', userController.index)
 // Action to create a new user in the database
 router.post('/users', userController.create)
 
-// For the user page
+// Show the user page
 router.get('/users/:userId', userController.show)
 
 // Update a user in the database
