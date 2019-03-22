@@ -10,18 +10,30 @@ export default class User extends Component {
       favorites: [],
     },
     redirectToUsers: false,
-    displayEditForm: false,
+    displayUserEditForm: false,
+    displayCountryAddForm: false,
+    newCountry: {}
   }
 
   componentDidMount = () => {
+    this.getUser()
+  }
+
+  getUser = () => {
     axios.get(`/api/v1/users/${this.props.match.params.userId}`).then(response => {
       this.setState({ user: response.data, redirectToUsers: false })
     })
   }
 
-  toggleEditForm = () => {
+  toggleUserEditForm = () => {
     this.setState((state, props) => {
-      return ({ displayEditForm: !state.displayEditForm })
+      return ({ displayUserEditForm: !state.displayUserEditForm })
+    })
+  }
+
+  toggleCountryAddForm = () => {
+    this.setState((state, props) => {
+      return ({ displayCountryAddForm: !state.displayCountryAddForm })
     })
   }
 
@@ -31,13 +43,19 @@ export default class User extends Component {
     this.setState({ user: updatedUser })
   }
 
+  handleCountryChange = (e) => {
+    const updatedCountry = { ...this.state.newCountry }
+    updatedCountry[e.target.name] = e.target.value
+    this.setState({ newCountry: updatedCountry })
+  }
+
   updateUser = (e) => {
     e.preventDefault()
     axios.put(`/api/v1/users/${this.state.user._id}`, {
       user: this.state.user
     })
       .then(res => {
-        this.setState({ user: res.data, displayEditForm: false })
+        this.setState({ user: res.data, displayUserEditForm: false })
       })
   }
 
@@ -49,6 +67,16 @@ export default class User extends Component {
       })
   }
 
+  addCountry = (e) => {
+    e.preventDefault()
+    const userId = this.props.match.params.userId
+    const payload = this.state.newCountry
+    axios.post(`/api/v1/users/${userId}/countries`, payload).then((res) => {
+      this.setState({ displayCountryAddForm: false })
+      this.getUser()
+    })
+  }
+
   render() {
     if (this.state.redirectToUsers) {
       return (<Redirect to='/users' />)
@@ -56,9 +84,9 @@ export default class User extends Component {
     return (
       <UserContainer>
         <h1>{this.state.user.name}'s Journey List</h1>
-        <button className="waves-effect waves-light btn" onClick={this.toggleEditForm}>Edit Your User Information</button>
+        <button className="waves-effect waves-light btn" onClick={this.toggleUserEditForm}>Edit Your User Information</button>
         {
-          this.state.displayEditForm ?
+          this.state.displayUserEditForm ?
             <form className="form-container col s12" onSubmit={this.updateUser}>
               <div className="row">
                 <div className="col s6">
@@ -72,12 +100,43 @@ export default class User extends Component {
                   />
                 </div>
               </div>
+              <div className="row">
+                <div className="col s6">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    id="password"
+                    type="text"
+                    name="password"
+                    onChange={this.handleChange}
+                    value={this.state.user.password}
+                  />
+                </div>
+              </div>
               <button className="waves-effect waves-light btn">Update</button>
             </form> :
             null
         }
         <div className="user-info-flex">
-          <h3>Countries</h3>
+          <h3>Countries<a onClick={this.toggleCountryAddForm} class="add-country btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></h3>
+          {
+            this.state.displayCountryAddForm ?
+              <form className="form-container col s12" onSubmit={this.addCountry}>
+                <div className="row">
+                  <div className="input-field col s6">
+                    <label htmlFor="name">Country Name</label>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      onChange={this.handleCountryChange}
+                      value={this.state.newCountry.name}
+                    />
+                  </div>
+                </div>
+                <button className="add-country-button waves-effect waves-light btn">Add Country</button>
+              </form>
+              : null
+          }
           <div className="country-flex">
             {
               this.state.user.countries.map(country => {

@@ -19,6 +19,8 @@ export const UserContainer = styled.div`
 
   .country-flex {
     display: flex;
+    flex-wrap: wrap;
+    width: 75vw;
   }
 
   .form-container {
@@ -34,5 +36,14 @@ export const UserContainer = styled.div`
 
   .delete-user {
     margin-top: 4vw;
+  }
+
+  .add-country {
+    margin-left: 1vw;
+    margin-bottom: 1vw;
+  }
+
+  .add-country-button {
+    margin-bottom: 2vw;
   }
 `
