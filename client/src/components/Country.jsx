@@ -10,23 +10,17 @@ export default class Country extends Component {
     country: {},
   }
 
-  getSpecificCountry = () => {
-    axios.get(`/api/v1/users/${this.props.match.params.userId}/countries/${this.props.match.params.countryId}`).then(response => {
-      this.setState({ country: response.data[0] })
+  getSpecificCountryName = () => {
+    return axios.get(`/api/v1/users/${this.props.match.params.userId}/countries/${this.props.match.params.countryId}`).then(response => {
+      return response.data[0].name.toLowerCase()
     })
   }
 
   componentDidMount = () => {
-    this.getSpecificCountry()
-    axios.get('https://raw.githubusercontent.com/iancoleman/cia_world_factbook_api/master/data/factbook.json').then(response => {
-      this.setState({ countries: response.data.countries })
-      return this.state.countries
-    }).then(res => {
-      const countries = { ...res }
-      console.log(countries)
-      // if (countries.hasOwnProperty(`${this.state.country.name}`)) {
-      //   console.log('found it')
-      // }
+    this.getSpecificCountryName().then(response => {
+      axios.get(`/country-data/${response}`).then(response => {
+        console.log(response)
+      })
     })
   }
 
