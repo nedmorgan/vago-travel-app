@@ -10,6 +10,7 @@ export const UserContainer = styled.div`
   h1, h3 {
     font-family: 'Lato', sans-serif;
     color: whitesmoke;
+    text-align: center;
   }
 
   .country-flex {
@@ -37,8 +38,18 @@ export const UserContainer = styled.div`
     width: 100%;
   }
 
+  .input-container {
+    margin-bottom: 1vw;
+  }
+
   .delete-user {
     margin-top: 4vw;
+  }
+
+  .remove-button {
+    margin-left: -5vw;
+    margin-bottom: 2vw;
+    position: absolute;
   }
 
   .add-country {
@@ -52,5 +63,9 @@ export const UserContainer = styled.div`
 
   .inputs {
     color: whitesmoke;
+  }
+
+  select {
+    display: initial;
   }
 `

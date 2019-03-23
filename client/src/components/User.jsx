@@ -9,6 +9,7 @@ export default class User extends Component {
       countries: [],
       favorites: [],
     },
+    countryNames: [],
     redirectToUsers: false,
     displayUserEditForm: false,
     displayCountryAddForm: false,
@@ -17,6 +18,13 @@ export default class User extends Component {
 
   componentDidMount = () => {
     this.getUser()
+    this.getCountries()
+  }
+
+  getCountries = () => {
+    axios.get('/country-data/countries').then(response => {
+      this.setState({countryNames: response.data})
+    })
   }
 
   getUser = () => {
@@ -132,18 +140,19 @@ export default class User extends Component {
           {
             this.state.displayCountryAddForm ?
               <form className="form-container col s12" onSubmit={this.addCountry}>
-                <div className="row">
-                  <div className="input-field col s6">
+                <div className="input-container row">
                     <label className="inputs" htmlFor="name">Country Name</label>
-                    <input
-                      className="inputs"
-                      id="name"
-                      type="text"
-                      name="name"
-                      onChange={this.handleCountryChange}
-                      value={this.state.newCountry.name}
-                    />
-                  </div>
+                    <select 
+                    name="name"
+                    id="name"
+                    onChange={this.handleCountryChange}>
+                    <option>Select a Country</option>
+                      {
+                        this.state.countryNames.map(name => {
+                          return <option value={name}>{name}</option>
+                        })
+                      }
+                    </select>
                 </div>
                 <button className="add-country-button waves-effect waves-light btn">Add Country</button>
               </form>
@@ -156,8 +165,8 @@ export default class User extends Component {
                   <div>
                     <Link className="country-button waves-effect waves-light btn-large" key={country._id} to={`/users/${this.state.user._id}/countries/${country._id}`}>
                       {country.name}
-                      <button onClick={(e) => this.deleteCountry(e, country._id)}>Delete</button>
                     </Link>
+                    <a onClick={(e) => this.deleteCountry(e, country._id)} className="remove-button btn-floating btn-small waves-effect waves-light red"><i class="material-icons">clear</i></a>
                   </div>
                 )
               })

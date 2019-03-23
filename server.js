@@ -13,10 +13,16 @@ app.use('/api/v1', routes)
 
 app.use(express.static(`${__dirname}/client/build`))
 
-app.get('/country-data/:name', (req, res) => {
+app.get('/country-data/countries', (req, res) => {
+  res.send(Object.keys(require(`${__dirname}/countryData.json`).countries))
+})
+
+app.get('/country-data/country/:name', (req, res) => {
   const countries = require(`${__dirname}/countryData.json`).countries
-  if (countries[req.params.name]) {
-    res.send(countries[req.params.name])
+  const regex = /\s/g
+  const formattedName = req.params.name.toLowerCase().replace(regex, '_')
+  if (countries[formattedName]) {
+    res.send(countries[formattedName])
   } else {
     res.send('That country does not exist yet!')
   }

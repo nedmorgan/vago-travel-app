@@ -18,7 +18,7 @@ export default class Country extends Component {
 
   componentDidMount = () => {
     this.getSpecificCountryName().then(response => {
-      axios.get(`/country-data/${response}`).then(response => {
+      axios.get(`/country-data/country/${response}`).then(response => {
         console.log(response)
         this.setState({ country: response.data.data, isLoading: false })
         console.log(this.state.country)
