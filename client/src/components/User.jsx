@@ -67,6 +67,15 @@ export default class User extends Component {
       })
   }
 
+  deleteCountry = (e, id) => {
+    e.preventDefault()
+    const userId = this.props.match.params.userId
+    axios.delete(`/api/v1/users/${userId}/countries/${id}`)
+      .then(res => {
+        this.getUser()
+      })
+  }
+
   addCountry = (e) => {
     e.preventDefault()
     const userId = this.props.match.params.userId
@@ -147,6 +156,7 @@ export default class User extends Component {
                   <div>
                     <Link className="country-button waves-effect waves-light btn-large" key={country._id} to={`/users/${this.state.user._id}/countries/${country._id}`}>
                       {country.name}
+                      <button onClick={(e) => this.deleteCountry(e, country._id)}>Delete</button>
                     </Link>
                   </div>
                 )
