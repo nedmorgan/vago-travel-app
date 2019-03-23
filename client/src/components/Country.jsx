@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import { CountryContainer } from './styled_components/CountryStyles'
 
 export default class Country extends Component {
   state = {
-    countries: [],
-    countryToUse: [],
     country: {},
+    isLoading: true,
+    redirectToUser: false,
   }
 
   getSpecificCountryName = () => {
@@ -20,15 +20,39 @@ export default class Country extends Component {
     this.getSpecificCountryName().then(response => {
       axios.get(`/country-data/${response}`).then(response => {
         console.log(response)
+        this.setState({ country: response.data.data, isLoading: false })
+        console.log(this.state.country)
       })
     })
   }
 
+  deleteCountry = () => {
+    const userId = this.props.match.params.userId
+    const countryId = this.props.match.params.countryId
+    axios.delete(`/api/v1/users/${userId}/countries/${countryId}`)
+      .then(res => {
+        this.setState({ user: res.data, redirectToUser: true })
+      })
+  }
+
   render() {
+    if (this.state.redirectToUser) {
+      return (<Redirect to={`/users/${this.props.match.params.userId}`} />)
+    }
     return (
       <CountryContainer>
-        <h1>{this.state.country.name}</h1>
         {
+          this.state.isLoading ?
+            <p>Loading.....</p>
+            :
+            <React.Fragment>
+              <h1>{this.state.country.name}</h1>
+              <div>
+                <h3>Introduction: </h3>
+                <p>{this.state.country.introduction.background}</p>
+              </div>
+              <button className="delete-user waves-effect waves-light btn red" onClick={this.deleteCountry}>Delete Country</button>
+            </React.Fragment>
         }
       </CountryContainer>
     )
