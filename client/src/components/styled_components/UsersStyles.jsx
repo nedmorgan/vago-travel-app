@@ -4,6 +4,8 @@ export const UsersContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: auto;
+  flex: 1;
 
   .user-flex {
     display: flex;

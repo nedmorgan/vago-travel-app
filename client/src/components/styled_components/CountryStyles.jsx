@@ -1,6 +1,18 @@
 import styled from 'styled-components'
 
 export const CountryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  flex: 1;
+  
+
+  .back-link {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
   h1 {
     text-align: center;
     text-decoration: underline;
@@ -11,11 +23,12 @@ export const CountryContainer = styled.div`
     color: whitesmoke;
   }
 
-  p {
-    overflow: hidden; 
-    word-wrap: break-word; 
-    text-overflow: ellipsis;
-  }
+  /* p {
+    width: 250px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+  } */
 
   .user-back {
     margin-top: 1vw;

@@ -54,13 +54,17 @@ export default class Country extends Component {
             <p>Loading.....</p>
             :
             <React.Fragment>
-              <Link className="user-back waves-effect waves-light btn-small" to={`/users/${this.props.match.params.userId}`}>Back to User Profile</Link>
+              <div className="back-link">
+                <Link className="user-back waves-effect waves-light btn-small" to={`/users/${this.props.match.params.userId}`}>Back to User Profile</Link>
+              </div>
               <h1>{this.state.country.name}<a onClick={this.addCountryToFavorites}><i class=" fav-icon fas fa-heart"></i></a></h1>
               <div>
                 <h3>Introduction: </h3>
                 <p>{this.state.country.introduction.background}</p>
               </div>
-              <button className="delete-user waves-effect waves-light btn red" onClick={this.deleteCountry}>Delete Country</button>
+              <div className="button-div">
+                <button className="delete-user waves-effect waves-light btn red" onClick={this.deleteCountry}>Delete Country</button>
+              </div>
             </React.Fragment>
         }
       </CountryContainer>
