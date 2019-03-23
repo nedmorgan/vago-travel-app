@@ -16,7 +16,14 @@
     "type": "git",
     "url": "git+https://github.com/nedmorgan/vago-travel-app.git"
   },
-  "keywords": ["travel", "explore", "wander", "sightseeing", "trip", "vacation"],
+  "keywords": [
+    "travel",
+    "explore",
+    "wander",
+    "sightseeing",
+    "trip",
+    "vacation"
+  ],
   "author": "Nathaniel Morgan",
   "license": "ISC",
   "bugs": {
@@ -27,6 +34,7 @@
     "concurrently": "^4.1.0",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
+    "fs": "0.0.1-security",
     "mongoose": "^5.4.19",
     "morgan": "^1.9.1"
   }
