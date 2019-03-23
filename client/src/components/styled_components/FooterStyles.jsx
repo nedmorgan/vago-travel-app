@@ -8,7 +8,6 @@ export const FooterContainer = styled.div`
   bottom: 0;
   width: 100%;
   margin-top: 5vw;
-  position: absolute;
 
   footer {
     margin-top: 1.5vw;

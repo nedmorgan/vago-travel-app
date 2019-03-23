@@ -26,6 +26,14 @@ export default class Country extends Component {
     })
   }
 
+  addCountryToFavorites = () => {
+    const userId = this.props.match.params.userId
+    const countryId = this.props.match.params.countryId
+    axios.post(`/api/v1/users/${userId}/countries/${countryId}`).then((res) => {
+      console.log(res)
+    })
+  }
+
   deleteCountry = () => {
     const userId = this.props.match.params.userId
     const countryId = this.props.match.params.countryId
@@ -46,7 +54,8 @@ export default class Country extends Component {
             <p>Loading.....</p>
             :
             <React.Fragment>
-              <h1>{this.state.country.name}</h1>
+              <Link className="user-back waves-effect waves-light btn-small" to={`/users/${this.props.match.params.userId}`}>Back to User Profile</Link>
+              <h1>{this.state.country.name}<a onClick={this.addCountryToFavorites}><i class=" fav-icon fas fa-heart"></i></a></h1>
               <div>
                 <h3>Introduction: </h3>
                 <p>{this.state.country.introduction.background}</p>

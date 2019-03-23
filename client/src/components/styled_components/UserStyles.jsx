@@ -5,6 +5,7 @@ export const UserContainer = styled.div`
   flex-direction: column;
   align-items: center;
   height: auto;
+  flex: 1;
   
   h1, h3 {
     font-family: 'Lato', sans-serif;

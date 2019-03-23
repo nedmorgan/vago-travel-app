@@ -11,4 +11,25 @@ export const CountryContainer = styled.div`
     color: whitesmoke;
   }
 
+  p {
+    overflow: hidden; 
+    word-wrap: break-word; 
+    text-overflow: ellipsis;
+  }
+
+  .user-back {
+    margin-top: 1vw;
+    margin-left: 1vw;
+  }
+
+  .fav-icon {
+    font-size: 5vw;
+    color: tomato;
+    margin-left: 2vw;
+  }
+
+  .fav-icon:hover {
+    cursor: pointer;
+  }
+
 `
