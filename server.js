@@ -1,6 +1,7 @@
 const express = require('express')
 const logger = require('morgan')
-const fs = require('fs')
+const app = express()
+const routes = require('./routes/index')
 
 app.use(logger('dev'))
 app.use(express.urlencoded({
@@ -12,13 +13,19 @@ app.use('/api/v1', routes)
 
 app.use(express.static(`${__dirname}/client/build`))
 
+app.get('/country-data/:name', (req, res) => {
+  const countries = require(`${__dirname}/countryData.json`).countries
+  if (countries[req.params.name]) {
+    res.send(countries[req.params.name])
+  } else {
+    res.send('That country does not exist yet!')
+  }
+})
+
 app.get('/*', (req, res) => {
   res.sendFile(`${__dirname}/client/build/index.html`)
 })
 
-app.get('/country-data/:name', (req, res) => {
-
-})
 
 const PORT = process.env.PORT || 3001
 
