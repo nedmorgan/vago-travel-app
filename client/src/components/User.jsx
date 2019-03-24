@@ -25,7 +25,7 @@ export default class User extends Component {
 
   getCountries = () => {
     axios.get('/country-data/countries').then(response => {
-      this.setState({countryNames: response.data})
+      this.setState({ countryNames: response.data })
     })
   }
 
@@ -143,54 +143,34 @@ export default class User extends Component {
             this.state.displayCountryAddForm ?
               <form className="form-container col s12" onSubmit={this.addCountry}>
                 <div className="input-container row">
-                    <label className="inputs" htmlFor="name">Country Name</label>
-                    <select 
+                  <label className="inputs" htmlFor="name">Country Name</label>
+                  <select
                     name="name"
                     id="name"
                     onChange={this.handleCountryChange}>
                     <option>Select a Country</option>
-                      {
-                        this.state.countryNames.map(name => {
-                          return <option value={name}>{name}</option>
-                        })
-                      }
-                    </select>
+                    {
+                      this.state.countryNames.map(name => {
+                        return <option value={name}>{name}</option>
+                      })
+                    }
+                  </select>
                 </div>
                 <button className="add-country-button waves-effect waves-light btn">Add Country</button>
               </form>
               : null
           }
           <div className="country-flex">
-          <CountriesList 
-          user={this.state.user}
-          deleteCountry={this.deleteCountry}
-          />
-            {/* {
-              this.state.user.countries.map(country => {
-                return (
-                  <div>
-                    <Link className="country-button waves-effect waves-light btn-large" key={country._id} to={`/users/${this.state.user._id}/countries/${country._id}`}>
-                      {country.name}
-                    </Link>
-                    <a onClick={(e) => this.deleteCountry(e, country._id)} className="remove-button btn-floating btn-small waves-effect waves-light red"><i class="material-icons">clear</i></a>
-                  </div>
-                )
-              })
-            } */}
+            <CountriesList
+              user={this.state.user}
+              deleteCountry={this.deleteCountry}
+            />
           </div>
           <h3>Favorites</h3>
           <div className="country-flex">
-            {
-              this.state.user.favorites.map(country => {
-                return (
-                  <div>
-                    <Link className="country-button waves-effect waves-light btn-large" key={country._id} to={`/users/${this.state.user._id}/countries/${country._id}`}>
-                      {country.name}
-                    </Link>
-                  </div>
-                )
-              })
-            }
+            <FavoritesList
+              user={this.state.user}
+            />
           </div>
         </div>
         <button className="delete-user waves-effect waves-light btn red" onClick={this.deleteUser}>Delete User</button>

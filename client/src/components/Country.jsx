@@ -17,6 +17,7 @@ export default class Country extends Component {
   }
 
   componentDidMount = () => {
+    this.setState({ isLoading: true })
     this.getSpecificCountryName().then(response => {
       axios.get(`/country-data/country/${response}`).then(response => {
         console.log(response)
@@ -25,6 +26,7 @@ export default class Country extends Component {
       })
     })
   }
+
 
   addCountryToFavorites = () => {
     const userId = this.props.match.params.userId
