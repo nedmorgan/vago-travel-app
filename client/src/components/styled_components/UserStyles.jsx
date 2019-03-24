@@ -47,7 +47,7 @@ export const UserContainer = styled.div`
   }
 
   .remove-button {
-    margin-left: -5vw;
+    margin-left: -3vw;
     margin-bottom: 2vw;
     position: absolute;
   }

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import { UserContainer } from './styled_components/UserStyles'
+import CountriesList from './CountriesList'
+import FavoritesList from './FavoritesList'
 
 export default class User extends Component {
   state = {
