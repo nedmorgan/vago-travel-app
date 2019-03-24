@@ -161,7 +161,11 @@ export default class User extends Component {
               : null
           }
           <div className="country-flex">
-            {
+          <CountriesList 
+          user={this.state.user}
+          deleteCountry={this.deleteCountry}
+          />
+            {/* {
               this.state.user.countries.map(country => {
                 return (
                   <div>
@@ -172,7 +176,7 @@ export default class User extends Component {
                   </div>
                 )
               })
-            }
+            } */}
           </div>
           <h3>Favorites</h3>
           <div className="country-flex">

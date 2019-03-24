@@ -15,14 +15,6 @@ export const UserContainer = styled.div`
 
   .country-flex {
     display: flex;
-  }
-
-  .country-button {
-    margin: 1vw;
-  }
-
-  .country-flex {
-    display: flex;
     flex-wrap: wrap;
     width: 75vw;
   }
@@ -44,12 +36,6 @@ export const UserContainer = styled.div`
 
   .delete-user {
     margin-top: 4vw;
-  }
-
-  .remove-button {
-    margin-left: -3vw;
-    margin-bottom: 2vw;
-    position: absolute;
   }
 
   .add-country {
