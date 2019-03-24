@@ -54,4 +54,10 @@ export const UserContainer = styled.div`
   select {
     display: initial;
   }
+
+  .drop-icon {
+    color: whitesmoke;
+    display: contents;
+    cursor: pointer;
+  }
 `

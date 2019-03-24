@@ -15,6 +15,8 @@ export default class User extends Component {
     redirectToUsers: false,
     displayUserEditForm: false,
     displayCountryAddForm: false,
+    displayCountriesList: false,
+    displayFavoritesList: false,
     newCountry: {}
   }
 
@@ -44,6 +46,18 @@ export default class User extends Component {
   toggleCountryAddForm = () => {
     this.setState((state, props) => {
       return ({ displayCountryAddForm: !state.displayCountryAddForm })
+    })
+  }
+
+  toggleCountriesList = () => {
+    this.setState((state, props) => {
+      return ({ displayCountriesList: !state.displayCountriesList })
+    })
+  }
+
+  toggleFavoritesList = () => {
+    this.setState((state, props) => {
+      return ({ displayFavoritesList: !state.displayFavoritesList })
     })
   }
 
@@ -138,7 +152,7 @@ export default class User extends Component {
             null
         }
         <div className="user-info-flex">
-          <h3>Countries<a onClick={this.toggleCountryAddForm} class="add-country btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></h3>
+          <h3><a onClick={this.toggleCountriesList}><i class="drop-icon small material-icons left">arrow_drop_down</i></a>Countries<a onClick={this.toggleCountryAddForm} class="add-country btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></h3>
           {
             this.state.displayCountryAddForm ?
               <form className="form-container col s12" onSubmit={this.addCountry}>
@@ -160,18 +174,26 @@ export default class User extends Component {
               </form>
               : null
           }
-          <div className="country-flex">
-            <CountriesList
-              user={this.state.user}
-              deleteCountry={this.deleteCountry}
-            />
-          </div>
-          <h3>Favorites</h3>
-          <div className="country-flex">
-            <FavoritesList
-              user={this.state.user}
-            />
-          </div>
+          {
+            this.state.displayCountriesList ?
+              <div className="country-flex">
+                <CountriesList
+                  user={this.state.user}
+                  deleteCountry={this.deleteCountry}
+                />
+              </div>
+              : null
+          }
+          <h3><a onClick={this.toggleFavoritesList}><i class="drop-icon small material-icons left">arrow_drop_down</i></a>Favorites</h3>
+          {
+            this.state.displayFavoritesList ?
+              <div className="country-flex">
+                <FavoritesList
+                  user={this.state.user}
+                />
+              </div>
+              : null
+          }
         </div>
         <button className="delete-user waves-effect waves-light btn red" onClick={this.deleteUser}>Delete User</button>
       </UserContainer>
