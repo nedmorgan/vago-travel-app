@@ -12,4 +12,8 @@ export const HomeContainer = styled.div`
     text-align: center;
     color: whitesmoke;
   }
+
+  .signup-link {
+    margin-top: 2vw;
+  }
 `
