@@ -13,6 +13,10 @@ export const UserContainer = styled.div`
     text-align: center;
   }
 
+  h1 {
+    text-decoration: underline;
+  }
+
   .country-flex {
     display: flex;
     flex-wrap: wrap;

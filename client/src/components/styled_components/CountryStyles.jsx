@@ -45,4 +45,8 @@ export const CountryContainer = styled.div`
     cursor: pointer;
   }
 
+  .country-buttons {
+    margin: 1vw;
+  }
+
 `

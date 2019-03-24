@@ -65,7 +65,8 @@ export default class Country extends Component {
                 <p>{this.state.country.introduction.background}</p>
               </div>
               <div className="button-div">
-                <button className="delete-user waves-effect waves-light btn red" onClick={this.deleteCountry}>Delete Country</button>
+                <button className="country-buttons delete-user waves-effect waves-light btn red" onClick={this.deleteCountry}>Delete Country</button>
+                <a href="https://www.google.com/flights/" target="_blank" className="country-buttons waves-effect waves-light btn"><i class="material-icons">flight</i></a>
               </div>
             </React.Fragment>
         }
