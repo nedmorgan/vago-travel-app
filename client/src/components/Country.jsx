@@ -79,7 +79,17 @@ export default class Country extends Component {
                 <ul>
                   {
                     this.state.country.people.languages.language.map((lang) => {
-                      return (<li className="language">{lang.name}</li>)
+                      return (<li className="list-items">{lang.name}</li>)
+                    })
+                  }
+                </ul>
+                <h3 className="country-info-title">Environmental Issues: </h3>
+                <ul>
+                  {
+                    this.state.country.geography.environment.current_issues.map((issue) => {
+                      return (
+                        <li className="environment-issue list-items">{issue.charAt(0).toUpperCase() + issue.slice(1)}</li>
+                      )
                     })
                   }
                 </ul>

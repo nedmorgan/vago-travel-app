@@ -69,10 +69,14 @@ export const CountryContainer = styled.div`
     font-size: 2vw;
   }
 
-  .language {
+  .list-items {
     color: whitesmoke;
     font-family: 'Lato', sans-serif;
     font-size: 3vw;
+  }
+
+  .environment-issue {
+    list-style-type: circle;
   }
 
   ul {
@@ -107,6 +111,10 @@ export const CountryContainer = styled.div`
    }
 
    .language {
+     font-size: 1em;
+   }
+
+   .list-items {
      font-size: 1em;
    }
 
