@@ -15,12 +15,17 @@ export const UserContainer = styled.div`
 
   h1 {
     text-decoration: underline;
+    font-size: 7vw;
+  }
+
+  h3 {
+    font-size: 5vw;
   }
 
   .country-flex {
     display: flex;
     flex-wrap: wrap;
-    width: 75vw;
+    width: 95vw;
   }
 
   .form-container {
@@ -51,6 +56,14 @@ export const UserContainer = styled.div`
     margin-bottom: 2vw;
   }
 
+  .user-info-flex {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
   .inputs {
     color: whitesmoke;
   }
@@ -64,4 +77,10 @@ export const UserContainer = styled.div`
     display: contents;
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+   .user-info-flex {
+     width: 90vw;
+     flex-wrap: wrap;
+   } 
 `

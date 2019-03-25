@@ -2,7 +2,7 @@
 
 Through this application you are able to explore different countries around the world before you book your ticket and go wandering. You can save countries that you want to visit in MongoDB.
 
-[Deployed Heroku Site](https://morning-beyond-88267.herokuapp.com/)
+[Deployed Heroku Site](https://vago-travel.herokuapp.com/)
 
 [Trello](https://trello.com/b/sPnKPtKq/vago)
 
