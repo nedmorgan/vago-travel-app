@@ -8,6 +8,7 @@ export default class Country extends Component {
     country: {},
     isLoading: true,
     redirectToUser: false,
+    user: {},
   }
 
   getSpecificCountryName = () => {
@@ -16,8 +17,15 @@ export default class Country extends Component {
     })
   }
 
+  getUser = () => {
+    axios.get(`/api/v1/users/${this.props.match.params.userId}`).then(response => {
+      this.setState({ user: response.data })
+    })
+  }
+
   componentDidMount = () => {
     this.setState({ isLoading: true })
+    this.getUser()
     this.getSpecificCountryName().then(response => {
       axios.get(`/country-data/country/${response}`).then(response => {
         console.log(response)
@@ -57,12 +65,16 @@ export default class Country extends Component {
             :
             <React.Fragment>
               <div className="back-link">
-                <Link className="user-back waves-effect waves-light btn-small" to={`/users/${this.props.match.params.userId}`}>Back to User Profile</Link>
+                <Link className="user-back waves-effect waves-light btn-small" to={`/users/${this.props.match.params.userId}`}>Back to {this.state.user.name}'s Profile</Link>
               </div>
               <h1>{this.state.country.name}<a onClick={this.addCountryToFavorites}><i class=" fav-icon fas fa-heart"></i></a></h1>
-              <div>
-                <h3>Introduction: </h3>
+              <div className="country-body">
+                <h3 className="country-info-title">Introduction: </h3>
                 <p>{this.state.country.introduction.background}</p>
+                <h3 className="country-info-title">Capital City: </h3>
+                <p className="capital-city">{this.state.country.government.capital.name}</p>
+                <h3 className="country-info-title">Climate: </h3>
+                <p>{this.state.country.geography.climate.charAt(0).toUpperCase() + this.state.country.geography.climate.slice(1)}</p>
               </div>
               <div className="button-div">
                 <button className="country-buttons delete-user waves-effect waves-light btn red" onClick={this.deleteCountry}>Delete Country</button>

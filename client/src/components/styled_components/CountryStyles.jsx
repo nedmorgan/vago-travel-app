@@ -13,9 +13,15 @@ export const CountryContainer = styled.div`
     justify-content: flex-start;
     width: 100%;
   }
+
   h1 {
     text-align: center;
     text-decoration: underline;
+    font-size: 6vw;
+  }
+
+  h3 {
+    font-size: 4vw;
   }
 
   h1, h3, p {
@@ -23,16 +29,31 @@ export const CountryContainer = styled.div`
     color: whitesmoke;
   }
 
-  /* p {
-    width: 250px;
-     white-space: nowrap;
-     overflow: hidden;
-     text-overflow: ellipsis;
-  } */
-
   .user-back {
     margin-top: 1vw;
     margin-left: 1vw;
+  }
+
+  .country-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90vw;
+  }
+
+  .country-info-title {
+    margin: 0;
+    margin-bottom: 1vw;
+  }
+
+  .capital-city {
+    font-size: 2.5vw;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 2vw;
   }
 
   .fav-icon {
