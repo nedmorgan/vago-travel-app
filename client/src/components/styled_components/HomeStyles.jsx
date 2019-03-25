@@ -59,5 +59,6 @@ h1, h2, .signup-link {
    h2 {
      font-size: 2em;
    }
+}
 
 `
