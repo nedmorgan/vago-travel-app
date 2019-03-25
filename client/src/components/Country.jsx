@@ -67,14 +67,14 @@ export default class Country extends Component {
               <div className="back-link">
                 <Link className="user-back waves-effect waves-light btn-small" to={`/users/${this.props.match.params.userId}`}>Back to {this.state.user.name}'s Profile</Link>
               </div>
-              <h1><a className="city-link" href={`https://wikitravel.org/en/${this.state.country.name}`} target="_blank">{this.state.country.name}</a><a onClick={this.addCountryToFavorites}><i class=" fav-icon fas fa-heart"></i></a></h1>
+              <h1><a className="title-link" href={`https://wikitravel.org/en/${this.state.country.name}`} target="_blank">{this.state.country.name}</a><a onClick={this.addCountryToFavorites}><i class=" fav-icon fas fa-heart"></i></a></h1>
               <div className="country-body">
                 <h3 className="country-info-title">Introduction: </h3>
                 <p>{this.state.country.introduction.background}</p>
                 <h3 className="country-info-title">Capital City: </h3>
                 <p className="capital-city">{this.state.country.government.capital.name}</p>
                 <h3 className="country-info-title">Languages: </h3>
-                <ul>
+                <ul className="circle-list">
                   {
                     this.state.country.people.languages.language.map((lang) => {
                       return (<li className="list-items"><a className="language-link" href={`https://translate.google.com/#view=home&op=translate&sl=en&tl=en`} target="_blank">{lang.name}</a></li>)
@@ -95,7 +95,7 @@ export default class Country extends Component {
                 <h3 className="country-info-title">Climate: </h3>
                 <p>{this.state.country.geography.climate.charAt(0).toUpperCase() + this.state.country.geography.climate.slice(1)}</p>
                 <h3 className="country-info-title">Environmental Issues: </h3>
-                <ul>
+                <ul className="circle-list">
                   {
                     this.state.country.geography.environment.current_issues.map((issue) => {
                       return (

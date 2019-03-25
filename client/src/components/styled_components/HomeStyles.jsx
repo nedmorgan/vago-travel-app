@@ -11,6 +11,7 @@ export const HomeContainer = styled.div`
   align-items: center;
   height: auto;
   flex: 1;
+  width: 100vw;
 
 h1, h2 {
   animation: 2s ${fadeIn};
@@ -29,14 +30,28 @@ h1, h2 {
   width: 1000px;
 }
 
+h1, h2 {
+  font-family: 'BioRhyme', serif;
+}
+
 h1, h2, .signup-link {
-  font-family: 'Lato', sans-serif;
   text-align: center;
   color: whitesmoke;
 }
 
   .signup-link {
+  font-family: 'Lato', sans-serif;
   margin-top: 2vw;
   animation: 2s ${ fadeUp};
 }
+
+@media (max-width: 768px) {
+   h1 {
+     font-size: 3em;
+   }
+
+   h2 {
+     font-size: 2em;
+   }
+
 `

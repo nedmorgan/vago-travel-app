@@ -12,10 +12,10 @@ export const LogInContainer = styled.div`
   animation: 1s ${fade};
   
   h1 {
-    font-family: 'Lato', sans-serif;
     text-align: center;
     font-size: 6vw;
     color: whitesmoke;
+    font-family: 'BioRhyme', serif;
   }
 
   .form-container {

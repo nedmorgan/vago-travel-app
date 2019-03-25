@@ -21,7 +21,7 @@ export const UsersContainer = styled.div`
   }
 
   h1 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'BioRhyme', serif;
     text-align: center;
     color: whitesmoke;
   }

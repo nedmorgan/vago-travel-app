@@ -13,7 +13,7 @@ export const UserContainer = styled.div`
   animation: 1s ${fade};
   
   h1, h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'BioRhyme', serif;
     color: whitesmoke;
     text-align: center;
   }
@@ -89,4 +89,13 @@ export const UserContainer = styled.div`
      width: 90vw;
      flex-wrap: wrap;
    } 
+
+   .add-country {
+     width: 24px !important;
+     height: 24px !important;
+   } 
+
+   i {
+     line-height: 26px !important;
+   }
 `

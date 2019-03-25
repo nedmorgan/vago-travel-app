@@ -26,6 +26,10 @@ export const CountryContainer = styled.div`
     margin-bottom: 2vw;
   }
 
+  .title-link {
+    font-family: 'BioRhyme', serif;
+  }
+
   h3 {
     font-size: 3.5vw;
     text-decoration: underline;
@@ -66,12 +70,14 @@ export const CountryContainer = styled.div`
   }
   
   .city-link,
-  .language-link {
+  .language-link,
+  .title-link {
     color: whitesmoke;
   }
 
   .city-link:hover,
-  .language-link:hover {
+  .language-link:hover,
+  .title-link:hover {
     color: #149CEA;
   }
 
@@ -88,7 +94,7 @@ export const CountryContainer = styled.div`
   .list-items {
     color: whitesmoke;
     font-family: 'Lato', sans-serif;
-    font-size: 3vw;
+    font-size: 2.5vw;
     list-style-type: circle;
   }
 
@@ -135,5 +141,12 @@ export const CountryContainer = styled.div`
    .list-items {
      font-size: 1em;
    }
+
+  @media (max-width: 768px) {
+    .circle-list {
+    margin-left: 4vw !important;
+  }
+
+  }
 
 `

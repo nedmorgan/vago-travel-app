@@ -10,7 +10,7 @@ export default class Home extends Component {
           <i class="airplane fas fa-plane"></i>
         </div>
         <h1> Always wanted to travel....</ h1>
-        <h2>Sign in and learn about some amazing places</h2>
+        <h2>Sign in and learn about some amazing places!</h2>
         <Link className="signup-link waves-effect waves-light btn-large" to='/login'>Sign Up!</Link>
       </HomeContainer>
     )

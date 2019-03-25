@@ -21,7 +21,17 @@ export const CountryListContainer = styled.div`
 
   @media (max-width: 768px) {
    .remove-button {
-     margin-left: -7vw;
+     margin-left: -6vw;
+     width: 24px;
+     height: 24px;
    } 
+
+   i {
+     line-height: 26px !important;
+   }
+
+   .remove-font {
+     line-height: 26px;
+   }
   }
 `
