@@ -1,9 +1,16 @@
 import styled, { keyframes } from 'styled-components'
-import { fadeInDown, fadeInUp, lightSpeedOut } from 'react-animations'
+import { fadeInDown, fadeInUp } from 'react-animations'
 
 export const fadeIn = keyframes`${fadeInDown}`
 export const fadeUp = keyframes`${fadeInUp}`
-export const fly = keyframes`${lightSpeedOut}`
+export const fly = keyframes`
+  0% {
+    transform: translate(0, 0);    
+  }
+  100% {
+    transform: translate(105vw, -50vw);
+  }
+`
 
 export const HomeContainer = styled.div`
   display: flex;
@@ -20,14 +27,13 @@ h1, h2 {
   .airplane {
   color: whitesmoke;
   font-size: 3vw;
-  left: -200px;
-  right: 600px;
   animation: 5s ${fly};
 }
 
   .airplane-div {
   position: absolute;
-  width: 1000px;
+  width: 100vw;
+  bottom: 0;
 }
 
 h1, h2 {
