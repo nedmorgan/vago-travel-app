@@ -18,10 +18,14 @@ export const CountryContainer = styled.div`
     text-align: center;
     text-decoration: underline;
     font-size: 6vw;
+    margin: 0;
+    margin-top: 3.5vw;
+    margin-bottom: 2vw;
   }
 
   h3 {
-    font-size: 4vw;
+    font-size: 3.5vw;
+    text-decoration: underline;
   }
 
   h1, h3, p {
@@ -50,10 +54,29 @@ export const CountryContainer = styled.div`
     font-size: 2.5vw;
     font-weight: bold;
   }
+  
+  .capital-link {
+    color: whitesmoke;
+  }
+
+  .capital-link:hover{
+    color: #149CEA;
+  }
 
   p {
     margin: 0;
     margin-bottom: 2vw;
+    font-size: 2vw;
+  }
+
+  .language {
+    color: whitesmoke;
+    font-family: 'Lato', sans-serif;
+    font-size: 3vw;
+  }
+
+  ul {
+    margin: 0;
   }
 
   .fav-icon {
@@ -69,5 +92,22 @@ export const CountryContainer = styled.div`
   .country-buttons {
     margin: 1vw;
   }
+
+  @media (min-width: 768px) {
+   h1 {
+     font-size: 4em;
+   }
+
+   h3 {
+     font-size: 2em;
+   }
+
+   p {
+     font-size: 1em;
+   }
+
+   .language {
+     font-size: 1em;
+   }
 
 `

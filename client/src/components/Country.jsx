@@ -72,9 +72,17 @@ export default class Country extends Component {
                 <h3 className="country-info-title">Introduction: </h3>
                 <p>{this.state.country.introduction.background}</p>
                 <h3 className="country-info-title">Capital City: </h3>
-                <p className="capital-city">{this.state.country.government.capital.name}</p>
+                <p className="capital-city"><a className="capital-link" href={`https://en.wikipedia.org/wiki/${this.state.country.government.capital.name}`} target="_blank">{this.state.country.government.capital.name}</a></p>
                 <h3 className="country-info-title">Climate: </h3>
                 <p>{this.state.country.geography.climate.charAt(0).toUpperCase() + this.state.country.geography.climate.slice(1)}</p>
+                <h3 className="country-info-title">Languages: </h3>
+                <ul>
+                  {
+                    this.state.country.people.languages.language.map((lang) => {
+                      return (<li className="language">{lang.name}</li>)
+                    })
+                  }
+                </ul>
               </div>
               <div className="button-div">
                 <button className="country-buttons delete-user waves-effect waves-light btn red" onClick={this.deleteCountry}>Delete Country</button>
