@@ -1,4 +1,7 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { flipInX } from 'react-animations'
+
+export const rotate = keyframes`${flipInX}`
 
 export const UsersContainer = styled.div`
   display: flex;
@@ -6,6 +9,7 @@ export const UsersContainer = styled.div`
   align-items: center;
   height: auto;
   flex: 1;
+  animation: 1s ${rotate};
 
   .user-flex {
     display: flex;

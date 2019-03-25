@@ -1,7 +1,8 @@
 import styled, { keyframes } from 'styled-components'
-import { fadeInDown } from 'react-animations'
+import { fadeInDown, fadeIn } from 'react-animations'
 
-export const fadeIn = keyframes`${fadeInDown}`
+export const fadeDown = keyframes`${fadeInDown}`
+export const fade = keyframes`${fadeIn}`
 
 export const UserContainer = styled.div`
   display: flex;
@@ -9,6 +10,7 @@ export const UserContainer = styled.div`
   align-items: center;
   height: auto;
   flex: 1;
+  animation: 1s ${fade};
   
   h1, h3 {
     font-family: 'Lato', sans-serif;
@@ -36,7 +38,7 @@ export const UserContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: .5s ${fadeIn};
+    animation: .5s ${fadeDown};
   }
 
   .row {

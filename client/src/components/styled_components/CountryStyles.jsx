@@ -1,4 +1,7 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { fadeIn } from 'react-animations'
+
+export const fade = keyframes`${fadeIn}`
 
 export const CountryContainer = styled.div`
   display: flex;
@@ -6,8 +9,8 @@ export const CountryContainer = styled.div`
   align-items: center;
   height: auto;
   flex: 1;
+  animation: 1s ${fade};
   
-
   .back-link {
     display: flex;
     justify-content: flex-start;
