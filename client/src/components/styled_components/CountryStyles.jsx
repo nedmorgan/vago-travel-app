@@ -36,6 +36,13 @@ export const CountryContainer = styled.div`
     color: whitesmoke;
   }
 
+  h5 {
+    color: whitesmoke;
+    font-size: 2.5vw;
+    margin: 0;
+    text-decoration: underline;
+  }
+
   .user-back {
     margin-top: 1vw;
     margin-left: 1vw;
@@ -58,12 +65,16 @@ export const CountryContainer = styled.div`
     font-weight: bold;
   }
   
-  .capital-link {
+  .city-link {
     color: whitesmoke;
   }
 
-  .capital-link:hover{
+  .city-link:hover{
     color: #149CEA;
+  }
+
+  .population {
+    margin-bottom: .5vw;
   }
 
   p {
@@ -76,14 +87,12 @@ export const CountryContainer = styled.div`
     color: whitesmoke;
     font-family: 'Lato', sans-serif;
     font-size: 3vw;
-  }
-
-  .environment-issue {
     list-style-type: circle;
   }
 
   ul {
     margin: 0;
+    margin-bottom: 1.5vw;
   }
 
   .fav-icon {
@@ -107,6 +116,10 @@ export const CountryContainer = styled.div`
 
    h3 {
      font-size: 2em;
+   }
+
+   h5 {
+     font-size: 1.5em;
    }
 
    p {

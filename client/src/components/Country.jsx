@@ -72,9 +72,7 @@ export default class Country extends Component {
                 <h3 className="country-info-title">Introduction: </h3>
                 <p>{this.state.country.introduction.background}</p>
                 <h3 className="country-info-title">Capital City: </h3>
-                <p className="capital-city"><a className="capital-link" href={`https://en.wikipedia.org/wiki/${this.state.country.government.capital.name}`} target="_blank">{this.state.country.government.capital.name}</a></p>
-                <h3 className="country-info-title">Climate: </h3>
-                <p>{this.state.country.geography.climate.charAt(0).toUpperCase() + this.state.country.geography.climate.slice(1)}</p>
+                <p className="capital-city">{this.state.country.government.capital.name}</p>
                 <h3 className="country-info-title">Languages: </h3>
                 <ul>
                   {
@@ -83,6 +81,19 @@ export default class Country extends Component {
                     })
                   }
                 </ul>
+                <h3 className="country-info-title">Major Urban Areas: </h3>
+                <ul>
+                  {
+                    this.state.country.people.major_urban_areas.places.map((place) => {
+                      return (<li>
+                        <h5><a className="city-link" href={`https://wikitravel.org/en/${place.place}`} target="_blank">{place.place}</a></h5>
+                        <p className="population">Population: {place.population}</p>
+                      </li>)
+                    })
+                  }
+                </ul>
+                <h3 className="country-info-title">Climate: </h3>
+                <p>{this.state.country.geography.climate.charAt(0).toUpperCase() + this.state.country.geography.climate.slice(1)}</p>
                 <h3 className="country-info-title">Environmental Issues: </h3>
                 <ul>
                   {
