@@ -65,11 +65,13 @@ export const CountryContainer = styled.div`
     font-weight: bold;
   }
   
-  .city-link {
+  .city-link,
+  .language-link {
     color: whitesmoke;
   }
 
-  .city-link:hover{
+  .city-link:hover,
+  .language-link:hover {
     color: #149CEA;
   }
 

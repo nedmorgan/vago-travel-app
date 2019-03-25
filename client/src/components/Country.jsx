@@ -67,7 +67,7 @@ export default class Country extends Component {
               <div className="back-link">
                 <Link className="user-back waves-effect waves-light btn-small" to={`/users/${this.props.match.params.userId}`}>Back to {this.state.user.name}'s Profile</Link>
               </div>
-              <h1>{this.state.country.name}<a onClick={this.addCountryToFavorites}><i class=" fav-icon fas fa-heart"></i></a></h1>
+              <h1><a className="city-link" href={`https://wikitravel.org/en/${this.state.country.name}`} target="_blank">{this.state.country.name}</a><a onClick={this.addCountryToFavorites}><i class=" fav-icon fas fa-heart"></i></a></h1>
               <div className="country-body">
                 <h3 className="country-info-title">Introduction: </h3>
                 <p>{this.state.country.introduction.background}</p>
@@ -77,7 +77,7 @@ export default class Country extends Component {
                 <ul>
                   {
                     this.state.country.people.languages.language.map((lang) => {
-                      return (<li className="list-items">{lang.name}</li>)
+                      return (<li className="list-items"><a className="language-link" href={`https://translate.google.com/#view=home&op=translate&sl=en&tl=en`} target="_blank">{lang.name}</a></li>)
                     })
                   }
                 </ul>

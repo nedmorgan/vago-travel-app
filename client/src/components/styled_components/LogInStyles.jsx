@@ -1,4 +1,7 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { fadeIn } from 'react-animations'
+
+export const fade = keyframes`${fadeIn}`
 
 export const LogInContainer = styled.div`
   display: flex;
@@ -6,6 +9,7 @@ export const LogInContainer = styled.div`
   align-items: center;
   height: auto;
   flex: 1;
+  animation: 1s ${fade};
   
   h1 {
     font-family: 'Lato', sans-serif;
