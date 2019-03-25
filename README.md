@@ -23,8 +23,14 @@ Through this application you are able to explore different countries around the 
 ### Home Page
 <img src='media/vago_homepage.jpg' alt='landing page' height=250 width=200/>
 
+### LogIn Page
+<img src='media/login_page.jpg' alt='login page' height=250 width=200/>
+
 ### User Page
 <img src='media/vago_userpage.jpg' alt='user page' height=250 width=200/>
+
+### Users Dashboard Page
+<img src='media/user_dashboard.jpg' alt='user page' height=250 width=200/>
 
 ### Country Specific Page
 <img src='media/vago_country_specific_page.jpg' alt='country specific page' height=250 width=200/>
