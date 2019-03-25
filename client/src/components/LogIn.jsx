@@ -20,7 +20,7 @@ export default class LogIn extends Component {
     axios.post('/api/v1/users', {
       user: this.state.user
     }).then((res) => {
-      this.setState({ redirectToHome: true, isSignedIn: true, createdUser: res.data })
+      this.setState({ redirectToUserPage: true, isSignedIn: true, createdUser: res.data })
     })
   }
 
@@ -36,7 +36,7 @@ export default class LogIn extends Component {
   }
 
   render() {
-    if (this.state.redirecttoUserPage) {
+    if (this.state.redirectToUserPage) {
       return (<Redirect to={`/users/${this.state.createdUser._id}`} />)
     }
     return (
