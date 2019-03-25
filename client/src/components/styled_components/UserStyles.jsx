@@ -1,4 +1,7 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { fadeInDown } from 'react-animations'
+
+export const fadeIn = keyframes`${fadeInDown}`
 
 export const UserContainer = styled.div`
   display: flex;
@@ -33,6 +36,7 @@ export const UserContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: .5s ${fadeIn};
   }
 
   .row {
