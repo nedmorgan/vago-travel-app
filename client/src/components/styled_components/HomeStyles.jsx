@@ -8,7 +8,7 @@ export const fly = keyframes`
     transform: translate(0, 0);    
   }
   100% {
-    transform: translate(105vw, -50vw);
+    transform: translate(110vw, -50vw);
   }
 `
 
@@ -58,6 +58,11 @@ h1, h2, .signup-link {
 
    h2 {
      font-size: 2em;
+   }
+
+   .airplane-div {
+     bottom: 90vw;
+     left: -10vw;
    }
 }
 
