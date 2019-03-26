@@ -4,21 +4,41 @@ mongoose.connect(process.env.MONGODB_URI)
 
 const User = require('../models/User')
 const Country = require('../models/Country')
+const Note = require('../models/Note')
+
+const hotel = new Note({
+  title: 'Quirky Hotel',
+  description: 'Found this great hotel in Rome. Look close to Trevi fountain!'
+})
+
+const beach = new Note({
+  title: 'Great Beach',
+  description: 'There is an amazing secluded beach close 30 minutes from airport in Phu Quoc.'
+})
+
+const diving = new Note({
+  title: 'Great diving spot',
+  description: 'Check out Buddy Dive in Sipadan for amazing diving!'
+})
 
 const italy = new Country({
-  name: 'Italy'
+  name: 'Italy',
+  note: [hotel]
 })
 
 const malaysia = new Country({
-  name: 'Malaysia'
+  name: 'Malaysia',
+  note: [diving]
 })
 
 const vietnam = new Country({
-  name: 'Vietnam'
+  name: 'Vietnam',
+  note: [beach]
 })
 
 const mexico = new Country({
-  name: 'Mexico'
+  name: 'Mexico',
+  note: []
 })
 
 const walter = new User({

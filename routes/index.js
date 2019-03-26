@@ -3,6 +3,7 @@ const router = express.Router()
 
 const userController = require('../controllers/userController')
 const countryController = require('../controllers/countryController')
+const noteController = require('../controllers/noteController')
 
 // User Controller
 
@@ -37,5 +38,19 @@ router.post('/users/:userId/countries/:countryId', countryController.favorite)
 
 // Delete a country from the database
 router.delete('/users/:userId/countries/:countryId', countryController.delete)
+
+// Note Controller
+
+// Route to display the notes
+router.get('/users/:userId/countries/:countryId/notes', noteController.index)
+
+// Route to post a new note
+router.post('/users/:userId/countries/:countryId/notes', noteController.create)
+
+//Route to update a note in database
+router.put('/users/:userId/countries/:countryId/notes/:noteId', noteController.update)
+
+// Route to delete a note
+router.delete('/users/:userId/countries/:countryId/notes/:noteId', noteController.delete)
 
 module.exports = router
