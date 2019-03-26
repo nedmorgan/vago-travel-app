@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import { CountryContainer } from './styled_components/CountryStyles'
+import Note from './Note'
 
 export default class Country extends Component {
   state = {
@@ -79,6 +80,11 @@ export default class Country extends Component {
               <div className="country-body">
                 <h3 className="country-info-title">Introduction: </h3>
                 <p>{this.state.country.introduction.background}</p>
+                <div className="note-flex-container">
+                  <Note
+                    notes={this.state.notes}
+                  />
+                </div>
                 <h3 className="country-info-title">Capital City: </h3>
                 <p className="capital-city">{this.state.country.government.capital.name}</p>
                 <h3 className="country-info-title">Languages: </h3>

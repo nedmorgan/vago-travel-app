@@ -64,6 +64,12 @@ export const CountryContainer = styled.div`
     margin-bottom: 1vw;
   }
 
+  .note-flex-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 75vw;
+  }
+
   .capital-city {
     font-size: 2.5vw;
     font-weight: bold;
@@ -147,6 +153,10 @@ export const CountryContainer = styled.div`
 
   p {
     font-size: .5em;
+  }
+
+  .row {
+    right: 5vw;
   }
 }
 `
