@@ -88,7 +88,7 @@ export const CountryContainer = styled.div`
   p {
     margin: 0;
     margin-bottom: 2vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 
   .list-items {
@@ -130,23 +130,22 @@ export const CountryContainer = styled.div`
      font-size: 1.5em;
    }
 
-   p {
-     font-size: 1em;
-   }
-
    .language {
      font-size: 1em;
    }
 
    .list-items {
-     font-size: 1em;
+     font-size: 1.3em;
    }
+}
 
   @media (max-width: 768px) {
     .circle-list {
     margin-left: 4vw !important;
   }
 
+  p {
+    font-size: .5em;
   }
-
+}
 `
