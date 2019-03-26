@@ -41,9 +41,6 @@ router.delete('/users/:userId/countries/:countryId', countryController.delete)
 
 // Note Controller
 
-// Route to display the notes
-router.get('/users/:userId/countries/:countryId/notes', noteController.index)
-
 // Route to post a new note
 router.post('/users/:userId/countries/:countryId/notes', noteController.create)
 

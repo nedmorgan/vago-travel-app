@@ -1,9 +1,8 @@
 const Note = require('../models/Note')
+const User = require('../models/User')
+const Country = require('../models/Country')
 
 const noteController = {
-  index: (req, res) => {
-    res.send('Show all the notes')
-  },
   create: (req, res) => {
     res.send('Create a new note in database')
   },

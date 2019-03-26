@@ -9,11 +9,18 @@ export default class Country extends Component {
     isLoading: true,
     redirectToUser: false,
     user: {},
+    notes: [],
   }
 
   getSpecificCountryName = () => {
     return axios.get(`/api/v1/users/${this.props.match.params.userId}/countries/${this.props.match.params.countryId}`).then(response => {
       return response.data[0].name.toLowerCase()
+    })
+  }
+
+  getCountryNote = () => {
+    return axios.get(`/api/v1/users/${this.props.match.params.userId}/countries/${this.props.match.params.countryId}`).then(response => {
+      this.setState({ notes: response.data[0].note })
     })
   }
 
@@ -26,6 +33,7 @@ export default class Country extends Component {
   componentDidMount = () => {
     this.setState({ isLoading: true })
     this.getUser()
+    this.getCountryNote()
     this.getSpecificCountryName().then(response => {
       axios.get(`/country-data/country/${response}`).then(response => {
         console.log(response)
