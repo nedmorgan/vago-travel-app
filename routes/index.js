@@ -35,9 +35,6 @@ router.post('/users/:userId/countries', countryController.create)
 // This will add a country into my favorites field
 router.post('/users/:userId/countries/:countryId', countryController.favorite)
 
-// Update a country in the database
-router.put('/users/:userId/countries/:countryId', countryController.update)
-
 // Delete a country from the database
 router.delete('/users/:userId/countries/:countryId', countryController.delete)
 

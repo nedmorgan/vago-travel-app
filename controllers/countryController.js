@@ -49,23 +49,12 @@ const countryController = {
         console.log("Somethangs wrong round these parts: ", err)
       })
   },
-  update: (req, res) => {
-    User.findById(req.params.userId)
-      .then(user => {
-        const updatedCountry = user.countries.id(req.params.countryId)
-        updatedCountry.set(req.body)
-        user.save()
-        res.json(updatedCountry)
-      }).catch((err) => {
-        console.log("Woopsies: ", err)
-      })
-  },
   delete: (req, res) => {
     User.findById(req.params.userId)
       .then(user => {
         const specificCountries = user.countries.filter(country => country._id.toString() !== req.params.countryId)
-        const favoriteCountries = user.favorites.filter(country => country._id.toString() !== req.params.countryId)
-        user.favorites = favoriteCountries
+        // const favoriteCountries = user.favorites.filter(country => country._id.toString() !== req.params.countryId)
+        // user.favorites = favoriteCountries
         user.countries = specificCountries
         user.save().then(user => {
           res.json(user.countries)
