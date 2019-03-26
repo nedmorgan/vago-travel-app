@@ -105,12 +105,13 @@ export const CountryContainer = styled.div`
 
   .fav-icon {
     font-size: 5vw;
-    color: tomato;
+    color: whitesmoke;
     margin-left: 2vw;
   }
 
   .fav-icon:hover {
     cursor: pointer;
+    color: tomato;
   }
 
   .country-buttons {

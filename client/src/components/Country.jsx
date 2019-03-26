@@ -67,7 +67,7 @@ export default class Country extends Component {
               <div className="back-link">
                 <Link className="user-back waves-effect waves-light btn-small" to={`/users/${this.props.match.params.userId}`}>Back to {this.state.user.name}'s Profile</Link>
               </div>
-              <h1><a className="title-link" href={`https://wikitravel.org/en/${this.state.country.name}`} target="_blank">{this.state.country.name}</a><a onClick={this.addCountryToFavorites}><i class=" fav-icon fas fa-heart"></i></a></h1>
+              <h1><a className="title-link" href={`https://wikitravel.org/en/${this.state.country.name}`} target="_blank">{this.state.country.name}</a><a onClick={this.addCountryToFavorites}><i class=" fav-icon far fa-heart"></i></a></h1>
               <div className="country-body">
                 <h3 className="country-info-title">Introduction: </h3>
                 <p>{this.state.country.introduction.background}</p>
