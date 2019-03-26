@@ -165,7 +165,8 @@ export default class User extends Component {
                     <option>Select a Country</option>
                     {
                       this.state.countryNames.map(name => {
-                        return <option value={name}>{name}</option>
+                        const regex = /_/g
+                        return <option value={name}>{name.toUpperCase().replace(regex, " ")}</option>
                       })
                     }
                   </select>
