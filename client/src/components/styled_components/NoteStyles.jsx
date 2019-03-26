@@ -4,10 +4,10 @@ export const NoteContainer = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   right: 5vw;
 
-  .note-title {
+  .note-header {
     text-align: center;
     margin: 0;
     margin-bottom: .5vw;
@@ -35,15 +35,49 @@ export const NoteContainer = styled.div`
 
   .add-icon {
     line-height: 35px;
-    margin-right: 10px;
+    margin-right: .25vw;
     color: whitesmoke;
+  }
+
+  .note-title, 
+  .note-body {
+    color: whitesmoke;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .note-body {
+    margin-bottom: .5vw;
+  }
+
+  .note-title {
+    margin-bottom: 1vw;
+  }
+
+  .delete-icon {
+    color: whitesmoke;
+  }
+
+  .delete-icon:hover {
+    cursor: pointer;
   }
 
   .add-icon:hover {
     cursor: pointer;
   }
 
+.title-container {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+}
 
+.note-container {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  align-items: center;
+  margin-top: 2vw;
+}
 
   .title-input {
     padding: 0;
@@ -52,10 +86,16 @@ export const NoteContainer = styled.div`
 
   .drop-icon {
     color: whitesmoke;
+    display: contents;
   }
 
   .drop-icon:hover {
     cursor: pointer;
+    color: #0095ff;
+  }
+
+  .row, .col {
+    float: none !important;
   }
 
   @media (min-width: 768px) {
@@ -67,6 +107,16 @@ export const NoteContainer = styled.div`
   @media (max-width: 768px) {
   .row {
     right: 5vw;
+  }
+
+  .add-icon {
+    font-size: 15px;
+    line-height: 20px;
+    margin-right: 5px;
+  }
+
+  .delete-icon {
+    font-size: 12px;
   }
 }
 `

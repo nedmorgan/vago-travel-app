@@ -16,7 +16,9 @@ export default class Note extends Component {
   render() {
     return (
       <NoteContainer className="row">
-        <h3 className="note-title"><a onClick={this.toggleNotesForm}><i class="add-icon small material-icons left">add</i></a>Notes:</h3>
+        <div className="title-container">
+          <h3 className="note-header"><a onClick={this.toggleNotesForm}><i class="add-icon small material-icons left">add</i></a>Notes:</h3>
+        </div>
         {
           this.state.displayNoteForm ?
             <form className="col s12">
@@ -32,7 +34,16 @@ export default class Note extends Component {
               </div>
               <button className="note-button">Add Note</button>
             </form>
-            : null
+            :
+            this.props.notes.map((note) => {
+              return (
+                <div className="note-container">
+                  <h5 className="note-title">{note.title}</h5>
+                  <p className="note-body">{note.description}</p>
+                  <a><i class="delete-icon material-icons">delete</i></a>
+                </div>
+              )
+            })
         }
       </NoteContainer>
     )
