@@ -4,7 +4,7 @@ export const NavContainer = styled.div`
   position: static;
   margin-top: 2vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: #fafafa;
   margin: 0;
   border-bottom: 1px solid black;
@@ -21,10 +21,12 @@ export const NavContainer = styled.div`
     font-size: 6vw;
     font-family: 'Satisfy', cursive;
   }
+
   .user-link {
     margin-top: 3vw;
     font-size: 3vw;
     font-family: 'Lato', sans-serif;
+    margin-right: 3vw;
   }
 
   i {
@@ -35,5 +37,6 @@ export const NavContainer = styled.div`
 
   .home-link {
     color: black;
+    margin-left: 3vw;
   }
 `
