@@ -27,7 +27,7 @@ export default class Note extends Component {
   handleSignUp = (e, note) => {
     e.preventDefault()
     this.props.addTravelTip(note)
-    this.setState({ displayNoteForm: false })
+    this.setState({ displayNoteForm: false, note: {} })
   }
 
   render() {
@@ -47,7 +47,7 @@ export default class Note extends Component {
                   className="tip-title validate"
                   onChange={this.handleChange}
                   value={this.state.note.title}></input>
-                <label for="title">Tip Title</label>
+                <label htmlFor="title">Tip Title</label>
               </div>
               <div className="middle-div row">
                 <div className="input-field col s12">
@@ -57,7 +57,7 @@ export default class Note extends Component {
                     className="note-body materialize-textarea"
                     onChange={this.handleChange}
                     value={this.state.note.description}></textarea>
-                  <label for="title">Description</label>
+                  <label htmlFor="title">Description</label>
                 </div>
               </div>
               <button className="note-button">Add Note</button>
@@ -68,7 +68,9 @@ export default class Note extends Component {
                 <div key={i} className="note-contents">
                   <h5 className="note-title">{note.title}</h5>
                   <p className="note-body">{note.description}</p>
-                  <a onClick={(e) => this.props.removeTravelTip(e, note._id)}><i className="delete-icon material-icons">delete</i></a>
+                  <div className="delete-div">
+                    <a onClick={(e) => this.props.removeTravelTip(e, note._id)}><i className="delete-icon material-icons">delete</i></a>
+                  </div>
                 </div>
               )
             })

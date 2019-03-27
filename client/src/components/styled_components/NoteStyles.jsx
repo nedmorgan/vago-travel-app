@@ -86,9 +86,15 @@ export const NoteContainer = styled.div`
   align-items: flex-start;
   margin-top: 2vw;
   border: 2px solid whitesmoke;
-  border-radius: 10%;
+  border-radius: 15px;
   padding: 1vw;
   animation: 1s ${fade};
+}
+
+.delete-div {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
 }
 
   .title-input {
@@ -123,8 +129,8 @@ export const NoteContainer = styled.div`
 
   .add-icon {
     font-size: 15px;
-    line-height: 20px;
-    margin-right: 5px;
+    line-height: 17px;
+    margin-right: 2px;
   }
 
   .delete-icon {
