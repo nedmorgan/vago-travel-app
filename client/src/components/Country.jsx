@@ -11,6 +11,7 @@ export default class Country extends Component {
     redirectToUser: false,
     user: {},
     notes: [],
+    countryId: '',
   }
 
   getSpecificCountryName = () => {
@@ -38,8 +39,7 @@ export default class Country extends Component {
     this.getSpecificCountryName().then(response => {
       axios.get(`/country-data/country/${response}`).then(response => {
         console.log(response)
-        this.setState({ country: response.data.data, isLoading: false })
-        console.log(this.state.country)
+        this.setState({ country: response.data.data, isLoading: false, countryId: this.props.match.params.countryId })
       })
     })
   }
@@ -83,6 +83,9 @@ export default class Country extends Component {
                 <div className="note-flex-container">
                   <Note
                     notes={this.state.notes}
+                    user={this.state.user}
+                    countryId={this.state.countryId}
+                    getCountryNote={this.getCountryNote}
                   />
                 </div>
                 <h3 className="country-info-title">Capital City: </h3>

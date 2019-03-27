@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NoteContainer } from './styled_components/NoteStyles'
+import axios from 'axios'
 
 export default class Note extends Component {
 
@@ -8,7 +9,8 @@ export default class Note extends Component {
     note: {
       title: '',
       description: '',
-    }
+    },
+    currentUser: {}
   }
 
   toggleNotesForm = () => {
@@ -18,7 +20,13 @@ export default class Note extends Component {
   }
 
   addTravelTip = () => {
-
+    const userId = this.props.user._id
+    const country = this.props.countryId
+    const payload = this.state.note
+    axios.post(`/api/v1/users/${userId}/countries/${country}/notes`, payload).then((res) => {
+      this.setState({ displayNoteForm: false })
+    })
+    this.props.getCountryNote()
   }
 
   handleChange = (e) => {
