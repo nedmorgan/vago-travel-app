@@ -1,6 +1,5 @@
 const Note = require('../models/Note')
 const User = require('../models/User')
-const Country = require('../models/Country')
 
 const noteController = {
   create: (req, res) => {
@@ -20,8 +19,13 @@ const noteController = {
     User.findById(req.params.userId)
       .then(user => {
         let specificCountry = user.countries.filter(country => country._id.toString() == req.params.countryId)
-        const note = specificCountry[0].note.filter(note => note._id.toString() !== req.params.noteId)
-
+        const notes = specificCountry[0].note.filter(note => note._id.toString() !== req.params.noteId)
+        specificCountry[0].note = notes
+        user.save().then(user => {
+          res.json(user)
+        })
+      }).catch((err) => {
+        console.log("Did not remove tip: ", err)
       })
   },
 }

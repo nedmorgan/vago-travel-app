@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { NoteContainer } from './styled_components/NoteStyles'
-import axios from 'axios'
 
 export default class Note extends Component {
 
@@ -19,15 +18,6 @@ export default class Note extends Component {
     })
   }
 
-  // addTravelTip = (note) => {
-  //   const userId = this.props.user._id
-  //   const country = this.props.countryId
-  //   axios.post(`/api/v1/users/${userId}/countries/${country}/notes`, note).then((res) => {
-  //     console.log(res)
-  //   })
-  //   this.getCountryNote()
-  // }
-
   handleChange = (e) => {
     const note = { ...this.state.note }
     note[e.target.name] = e.target.value
@@ -44,7 +34,7 @@ export default class Note extends Component {
     return (
       <NoteContainer className="row">
         <div className="title-container">
-          <h3 className="note-header"><a onClick={this.toggleNotesForm}><i class="add-icon small material-icons left">add</i></a>Travel Tips:</h3>
+          <h3 className="note-header"><a onClick={this.toggleNotesForm}><i className="add-icon small material-icons left">add</i></a>Travel Tips:</h3>
         </div>
         {
           this.state.displayNoteForm ?
@@ -73,12 +63,12 @@ export default class Note extends Component {
               <button className="note-button">Add Note</button>
             </form>
             :
-            this.props.notes.map((note) => {
+            this.props.notes.map((note, i) => {
               return (
-                <div className="note-contents">
+                <div key={i} className="note-contents">
                   <h5 className="note-title">{note.title}</h5>
                   <p className="note-body">{note.description}</p>
-                  <a><i class="delete-icon material-icons">delete</i></a>
+                  <a onClick={(e) => this.props.removeTravelTip(e, note._id)}><i className="delete-icon material-icons">delete</i></a>
                 </div>
               )
             })

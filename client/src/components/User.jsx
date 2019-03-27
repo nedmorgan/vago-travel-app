@@ -152,7 +152,7 @@ export default class User extends Component {
             null
         }
         <div className="user-info-flex">
-          <h3><a onClick={this.toggleCountriesList}><i class="drop-icon small material-icons left">arrow_drop_down</i></a>Countries<a onClick={this.toggleCountryAddForm} class="add-country btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></h3>
+          <h3><a onClick={this.toggleCountriesList}><i class="drop-icon small material-icons left">arrow_drop_down</i></a>Countries<a onClick={this.toggleCountryAddForm} className="add-country btn-floating btn-small waves-effect waves-light red"><i className="material-icons">add</i></a></h3>
           {
             this.state.displayCountryAddForm ?
               <form className="form-container col s12" onSubmit={this.addCountry}>
@@ -185,7 +185,7 @@ export default class User extends Component {
               </div>
               : null
           }
-          <h3><a onClick={this.toggleFavoritesList}><i class="drop-icon small material-icons left">arrow_drop_down</i></a>Favorites</h3>
+          <h3><a onClick={this.toggleFavoritesList}><i className="drop-icon small material-icons left">arrow_drop_down</i></a>Favorites</h3>
           {
             this.state.displayFavoritesList ?
               <div className="country-flex">

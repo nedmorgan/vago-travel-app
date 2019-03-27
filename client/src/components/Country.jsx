@@ -42,6 +42,17 @@ export default class Country extends Component {
     })
   }
 
+  removeTravelTip = (e, id) => {
+    e.preventDefault()
+    const userId = this.props.match.params.userId
+    const countryId = this.props.match.params.countryId
+    axios.delete(`/api/v1/users/${userId}/countries/${countryId}/notes/${id}`)
+      .then(res => {
+        this.getUser()
+        this.getCountryNote()
+      })
+  }
+
   componentDidMount = () => {
     this.setState({ isLoading: true })
     this.getUser()
@@ -86,7 +97,7 @@ export default class Country extends Component {
               <div className="back-link">
                 <Link className="user-back waves-effect waves-light btn-small" to={`/users/${this.props.match.params.userId}`}>Back to {this.state.user.name}'s Profile</Link>
               </div>
-              <h1><a className="title-link" href={`https://wikitravel.org/en/${this.state.country.name}`} target="_blank" rel="noopener noreferrer">{this.state.country.name}</a><a onClick={this.addCountryToFavorites}><i class=" fav-icon far fa-heart"></i></a></h1>
+              <h1><a className="title-link" href={`https://wikitravel.org/en/${this.state.country.name}`} target="_blank" rel="noopener noreferrer">{this.state.country.name}</a><a onClick={this.addCountryToFavorites}><i className=" fav-icon far fa-heart"></i></a></h1>
               <div className="country-body">
                 <h3 className="country-info-title">Introduction: </h3>
                 <p>{this.state.country.introduction.background}</p>
@@ -96,6 +107,7 @@ export default class Country extends Component {
                     user={this.state.user}
                     countryId={this.state.countryId}
                     addTravelTip={this.addTravelTip}
+                    removeTravelTip={this.removeTravelTip}
                   />
                 </div>
                 <h3 className="country-info-title">Capital City: </h3>
@@ -103,16 +115,16 @@ export default class Country extends Component {
                 <h3 className="country-info-title">Languages: </h3>
                 <ul className="circle-list">
                   {
-                    this.state.country.people.languages.language.map((lang) => {
-                      return (<li className="list-items"><a className="language-link" href={`https://translate.google.com/#view=home&op=translate&sl=en&tl=en`} target="_blank" rel="noopener noreferrer">{lang.name}</a></li>)
+                    this.state.country.people.languages.language.map((lang, i) => {
+                      return (<li key={i} className="list-items"><a className="language-link" href={`https://translate.google.com/#view=home&op=translate&sl=en&tl=en`} target="_blank" rel="noopener noreferrer">{lang.name}</a></li>)
                     })
                   }
                 </ul>
                 <h3 className="country-info-title">Major Urban Areas: </h3>
                 <ul>
                   {
-                    this.state.country.people.major_urban_areas.places.map((place) => {
-                      return (<li>
+                    this.state.country.people.major_urban_areas.places.map((place, i) => {
+                      return (<li key={i}>
                         <h5><a className="city-link" href={`https://wikitravel.org/en/${place.place}`} target="_blank" rel="noopener noreferrer">{place.place}</a></h5>
                         <p className="population">Population: {place.population}</p>
                       </li>)
@@ -124,9 +136,9 @@ export default class Country extends Component {
                 <h3 className="country-info-title">Environmental Issues: </h3>
                 <ul className="circle-list">
                   {
-                    this.state.country.geography.environment.current_issues.map((issue) => {
+                    this.state.country.geography.environment.current_issues.map((issue, i) => {
                       return (
-                        <li className="environment-issue list-items">{issue.charAt(0).toUpperCase() + issue.slice(1)}</li>
+                        <li key={i} className="environment-issue list-items">{issue.charAt(0).toUpperCase() + issue.slice(1)}</li>
                       )
                     })
                   }
@@ -134,7 +146,7 @@ export default class Country extends Component {
               </div>
               <div className="button-div">
                 <button className="country-buttons delete-user waves-effect waves-light btn red" onClick={this.deleteCountry}>Delete Country</button>
-                <a href="https://www.google.com/flights/" target="_blank" rel="noopener noreferrer" className="country-buttons waves-effect waves-light btn"><i class="material-icons">flight</i></a>
+                <a href="https://www.google.com/flights/" target="_blank" rel="noopener noreferrer" className="country-buttons waves-effect waves-light btn"><i className="material-icons">flight</i></a>
               </div>
             </React.Fragment>
         }
