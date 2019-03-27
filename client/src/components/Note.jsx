@@ -19,15 +19,14 @@ export default class Note extends Component {
     })
   }
 
-  addTravelTip = () => {
-    const userId = this.props.user._id
-    const country = this.props.countryId
-    const payload = this.state.note
-    axios.post(`/api/v1/users/${userId}/countries/${country}/notes`, payload).then((res) => {
-      this.setState({ displayNoteForm: false })
-    })
-    this.props.getCountryNote()
-  }
+  // addTravelTip = (note) => {
+  //   const userId = this.props.user._id
+  //   const country = this.props.countryId
+  //   axios.post(`/api/v1/users/${userId}/countries/${country}/notes`, note).then((res) => {
+  //     console.log(res)
+  //   })
+  //   this.getCountryNote()
+  // }
 
   handleChange = (e) => {
     const note = { ...this.state.note }
@@ -35,9 +34,10 @@ export default class Note extends Component {
     this.setState({ note })
   }
 
-  handleSignUp = (e) => {
+  handleSignUp = (e, note) => {
     e.preventDefault()
-    this.addTravelTip()
+    this.props.addTravelTip(note)
+    this.setState({ displayNoteForm: false })
   }
 
   render() {
@@ -48,7 +48,7 @@ export default class Note extends Component {
         </div>
         {
           this.state.displayNoteForm ?
-            <form className="col s12" onSubmit={this.handleSignUp}>
+            <form className="col s12" onSubmit={(e) => this.handleSignUp(e, this.state.note)}>
               <div className="title-input input-field col s12">
                 <input
                   id="title"

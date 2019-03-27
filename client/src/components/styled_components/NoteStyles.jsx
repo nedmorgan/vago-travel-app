@@ -1,4 +1,7 @@
 import styled, { keyframes } from 'styled-components'
+import { fadeIn } from 'react-animations'
+
+export const fade = keyframes`${fadeIn}`
 
 export const NoteContainer = styled.div`
   position: absolute;
@@ -6,6 +9,10 @@ export const NoteContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
   right: 5vw;
+
+  form {
+    animation: 1s ${fade};
+  }
 
   .note-header {
     text-align: center;
@@ -81,6 +88,7 @@ export const NoteContainer = styled.div`
   border: 2px solid whitesmoke;
   border-radius: 10%;
   padding: 1vw;
+  animation: 1s ${fade};
 }
 
   .title-input {

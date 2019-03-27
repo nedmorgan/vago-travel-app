@@ -32,6 +32,16 @@ export default class Country extends Component {
     })
   }
 
+  addTravelTip = (note) => {
+    const userId = this.props.match.params.userId
+    const country = this.props.match.params.countryId
+    axios.post(`/api/v1/users/${userId}/countries/${country}/notes`, note).then((res) => {
+      console.log(res)
+    }).then(() => {
+      this.getCountryNote()
+    })
+  }
+
   componentDidMount = () => {
     this.setState({ isLoading: true })
     this.getUser()
@@ -85,7 +95,7 @@ export default class Country extends Component {
                     notes={this.state.notes}
                     user={this.state.user}
                     countryId={this.state.countryId}
-                    getCountryNote={this.getCountryNote}
+                    addTravelTip={this.addTravelTip}
                   />
                 </div>
                 <h3 className="country-info-title">Capital City: </h3>
