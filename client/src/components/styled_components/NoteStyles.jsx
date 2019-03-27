@@ -40,7 +40,8 @@ export const NoteContainer = styled.div`
   }
 
   .note-title, 
-  .note-body {
+  .note-body,
+  input {
     color: whitesmoke;
     font-family: 'Lato', sans-serif;
   }

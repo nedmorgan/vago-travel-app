@@ -5,12 +5,31 @@ export default class Note extends Component {
 
   state = {
     displayNoteForm: false,
+    note: {
+      title: '',
+      description: '',
+    }
   }
 
   toggleNotesForm = () => {
     this.setState((state, props) => {
       return ({ displayNoteForm: !state.displayNoteForm })
     })
+  }
+
+  addTravelTip = () => {
+
+  }
+
+  handleChange = (e) => {
+    const note = { ...this.state.note }
+    note[e.target.name] = e.target.value
+    this.setState({ note })
+  }
+
+  handleSignUp = (e) => {
+    e.preventDefault()
+    this.addTravelTip()
   }
 
   render() {
@@ -21,14 +40,25 @@ export default class Note extends Component {
         </div>
         {
           this.state.displayNoteForm ?
-            <form className="col s12">
+            <form className="col s12" onSubmit={this.handleSignUp}>
               <div className="title-input input-field col s12">
-                <input id="title" name="title" type="text" className="validate"></input>
+                <input
+                  id="title"
+                  name="title"
+                  type="text"
+                  className="tip-title validate"
+                  onChange={this.handleChange}
+                  value={this.state.note.title}></input>
                 <label for="title">Tip Title</label>
               </div>
               <div className="middle-div row">
                 <div className="input-field col s12">
-                  <textarea id="textarea1" name="description" className="note-body materialize-textarea"></textarea>
+                  <textarea
+                    id="textarea1"
+                    name="description"
+                    className="note-body materialize-textarea"
+                    onChange={this.handleChange}
+                    value={this.state.note.description}></textarea>
                   <label for="title">Description</label>
                 </div>
               </div>
