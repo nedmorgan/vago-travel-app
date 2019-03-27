@@ -44,9 +44,6 @@ router.delete('/users/:userId/countries/:countryId', countryController.delete)
 // Route to post a new note
 router.post('/users/:userId/countries/:countryId/notes', noteController.create)
 
-//Route to update a note in database
-router.put('/users/:userId/countries/:countryId/notes/:noteId', noteController.update)
-
 // Route to delete a note
 router.delete('/users/:userId/countries/:countryId/notes/:noteId', noteController.delete)
 

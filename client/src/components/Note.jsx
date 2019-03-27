@@ -17,14 +17,14 @@ export default class Note extends Component {
     return (
       <NoteContainer className="row">
         <div className="title-container">
-          <h3 className="note-header"><a onClick={this.toggleNotesForm}><i class="add-icon small material-icons left">add</i></a>Notes:</h3>
+          <h3 className="note-header"><a onClick={this.toggleNotesForm}><i class="add-icon small material-icons left">add</i></a>Travel Tips:</h3>
         </div>
         {
           this.state.displayNoteForm ?
             <form className="col s12">
               <div className="title-input input-field col s12">
                 <input id="title" name="title" type="text" className="validate"></input>
-                <label for="title">Title</label>
+                <label for="title">Tip Title</label>
               </div>
               <div className="middle-div row">
                 <div className="input-field col s12">
@@ -37,7 +37,7 @@ export default class Note extends Component {
             :
             this.props.notes.map((note) => {
               return (
-                <div className="note-container">
+                <div className="note-contents">
                   <h5 className="note-title">{note.title}</h5>
                   <p className="note-body">{note.description}</p>
                   <a><i class="delete-icon material-icons">delete</i></a>

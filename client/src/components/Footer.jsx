@@ -8,7 +8,7 @@ export default class Footer extends Component {
         <footer className="footer">
           <div>
             <div class="text-center">© 2019 Copyright:
-      <a href="https://nedmorgan.github.io/" target="_blank"> Ned Morgan</a>
+      <a href="https://nedmorgan.github.io/" target="_blank" rel="noopener noreferrer"> Ned Morgan</a>
             </div>
           </div>
         </footer>

@@ -14,7 +14,7 @@ export default class CountriesList extends Component {
                 <Link className="country-button waves-effect waves-light btn-large" key={country._id} to={`/users/${this.props.user._id}/countries/${country._id}`}>
                   {country.name.toUpperCase().replace(regex, " ")}
                 </Link>
-                <a onClick={(e) => this.props.deleteCountry(e, country._id)} className="remove-button btn-floating btn-small waves-effect waves-light red"><i class="material-icons">clear</i></a>
+                <a onClick={(e) => this.props.deleteCountry(e, country._id)} className="remove-button btn-floating btn-small waves-effect waves-light red" rel="noopener noreferrer"><i class="material-icons">clear</i></a>
               </div>
             )
           })

@@ -76,7 +76,7 @@ export default class Country extends Component {
               <div className="back-link">
                 <Link className="user-back waves-effect waves-light btn-small" to={`/users/${this.props.match.params.userId}`}>Back to {this.state.user.name}'s Profile</Link>
               </div>
-              <h1><a className="title-link" href={`https://wikitravel.org/en/${this.state.country.name}`} target="_blank">{this.state.country.name}</a><a onClick={this.addCountryToFavorites}><i class=" fav-icon far fa-heart"></i></a></h1>
+              <h1><a className="title-link" href={`https://wikitravel.org/en/${this.state.country.name}`} target="_blank" rel="noopener noreferrer">{this.state.country.name}</a><a onClick={this.addCountryToFavorites}><i class=" fav-icon far fa-heart"></i></a></h1>
               <div className="country-body">
                 <h3 className="country-info-title">Introduction: </h3>
                 <p>{this.state.country.introduction.background}</p>
@@ -91,7 +91,7 @@ export default class Country extends Component {
                 <ul className="circle-list">
                   {
                     this.state.country.people.languages.language.map((lang) => {
-                      return (<li className="list-items"><a className="language-link" href={`https://translate.google.com/#view=home&op=translate&sl=en&tl=en`} target="_blank">{lang.name}</a></li>)
+                      return (<li className="list-items"><a className="language-link" href={`https://translate.google.com/#view=home&op=translate&sl=en&tl=en`} target="_blank" rel="noopener noreferrer">{lang.name}</a></li>)
                     })
                   }
                 </ul>
@@ -100,7 +100,7 @@ export default class Country extends Component {
                   {
                     this.state.country.people.major_urban_areas.places.map((place) => {
                       return (<li>
-                        <h5><a className="city-link" href={`https://wikitravel.org/en/${place.place}`} target="_blank">{place.place}</a></h5>
+                        <h5><a className="city-link" href={`https://wikitravel.org/en/${place.place}`} target="_blank" rel="noopener noreferrer">{place.place}</a></h5>
                         <p className="population">Population: {place.population}</p>
                       </li>)
                     })
@@ -121,7 +121,7 @@ export default class Country extends Component {
               </div>
               <div className="button-div">
                 <button className="country-buttons delete-user waves-effect waves-light btn red" onClick={this.deleteCountry}>Delete Country</button>
-                <a href="https://www.google.com/flights/" target="_blank" className="country-buttons waves-effect waves-light btn"><i class="material-icons">flight</i></a>
+                <a href="https://www.google.com/flights/" target="_blank" rel="noopener noreferrer" className="country-buttons waves-effect waves-light btn"><i class="material-icons">flight</i></a>
               </div>
             </React.Fragment>
         }

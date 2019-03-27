@@ -53,8 +53,6 @@ const countryController = {
     User.findById(req.params.userId)
       .then(user => {
         const specificCountries = user.countries.filter(country => country._id.toString() !== req.params.countryId)
-        // const favoriteCountries = user.favorites.filter(country => country._id.toString() !== req.params.countryId)
-        // user.favorites = favoriteCountries
         user.countries = specificCountries
         user.save().then(user => {
           res.json(user.countries)

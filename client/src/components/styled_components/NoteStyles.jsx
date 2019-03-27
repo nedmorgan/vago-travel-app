@@ -71,12 +71,15 @@ export const NoteContainer = styled.div`
   justify-content: center;
 }
 
-.note-container {
+.note-contents {
   display: flex;
   flex-direction: column;
   width: 40vw;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 2vw;
+  border: 2px solid whitesmoke;
+  border-radius: 10%;
+  padding: 1vw;
 }
 
   .title-input {

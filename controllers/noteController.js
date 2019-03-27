@@ -6,9 +6,6 @@ const noteController = {
   create: (req, res) => {
     res.send('Create a new note in database')
   },
-  update: (req, res) => {
-    res.send('Update a note in the database')
-  },
   delete: (req, res) => {
     User.findById(req.params.userId)
       .then(user => {
