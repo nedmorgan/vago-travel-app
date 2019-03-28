@@ -36,7 +36,6 @@ export default class Country extends Component {
     const userId = this.props.match.params.userId
     const country = this.props.match.params.countryId
     axios.post(`/api/v1/users/${userId}/countries/${country}/notes`, note).then((res) => {
-      console.log(res)
     }).then(() => {
       this.getCountryNote()
     })
@@ -59,7 +58,6 @@ export default class Country extends Component {
     this.getCountryNote()
     this.getSpecificCountryName().then(response => {
       axios.get(`/country-data/country/${response}`).then(response => {
-        console.log(response)
         this.setState({ country: response.data.data, isLoading: false, countryId: this.props.match.params.countryId })
       })
     })
@@ -70,7 +68,6 @@ export default class Country extends Component {
     const userId = this.props.match.params.userId
     const countryId = this.props.match.params.countryId
     axios.post(`/api/v1/users/${userId}/countries/${countryId}`).then((res) => {
-      console.log(res)
     })
   }
 
