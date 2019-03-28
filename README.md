@@ -1,6 +1,6 @@
 # Vago
 
-Through this application you are able to explore different countries around the world before you book your ticket and go wandering. You can save countries that you want to visit and return to them later.
+Through this application you are able to explore different countries around the world before you book your ticket and go wandering. You can save countries that you want to visit and return to them later and add travel tips so you don't forget what you want to see.
 
 [Deployed Heroku Site](https://vago-travel.herokuapp.com/)
 
@@ -16,7 +16,8 @@ Through this application you are able to explore different countries around the 
 * The user can add a certain country to a list of places they would like to visit.
 * The user can remove a country if they are no longer interested in visiting.
 * The user can click a link to be forwarded to an outside page to view flight information.
-* This user can click on pieces of the country page to view outside information.
+* The user can click on pieces of the country page to view outside information.
+* The user is able to add and delete travel tips for each country they are interested in visiting. 
 
 ## Wireframe:
 
@@ -55,6 +56,7 @@ Through this application you are able to explore different countries around the 
 * Able to create, update, and delete a country
 * Able to add a country to a list of favorites
 * Able to link to an outside site to view flights and further information about a topic
+* Able to add and delete a travel tip
 
 ___
 
