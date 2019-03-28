@@ -43,6 +43,8 @@ Through this application you are able to explore different countries around the 
 
 * Languages - Javascript, HTML, and CSS
 * Front-End Frameworks - Materialize
+* Web-Application Framework - Express (Node.js)
+* Database - MongoDB
 * Libraries - React
 * Design - Google Fonts and Responsive methodologies
 * Visual Studio Code
