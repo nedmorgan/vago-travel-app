@@ -45,6 +45,10 @@ export const UserContainer = styled.div`
     width: 100%;
   }
 
+  .col {
+    width: 75% !important;
+  }
+
   .input-container {
     margin-bottom: 1vw;
   }
@@ -94,6 +98,11 @@ export const UserContainer = styled.div`
      width: 24px !important;
      height: 24px !important;
    } 
+
+   .drop-icon {
+     display: initial;
+     margin-right: 0;
+   }
 
    i {
      line-height: 26px !important;
