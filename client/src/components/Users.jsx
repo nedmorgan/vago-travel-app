@@ -10,7 +10,6 @@ export default class Users extends Component {
   }
 
   componentDidMount = () => {
-    console.log('Component Mounted')
     this.getAllUsers()
   }
 
