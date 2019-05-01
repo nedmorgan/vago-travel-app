@@ -69,11 +69,11 @@ h1, h2, .signup-link {
 @media (max-width: 1024px) {
    h1 {
      font-size: 4.25em;
-     margin-top: 3em;
+     margin-top: 2.5em;
    }
 
    h2 {
-     font-size: 2.25em;
+     font-size: 2.15em;
    }
 
    .airplane-div {

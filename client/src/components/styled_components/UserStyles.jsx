@@ -105,6 +105,17 @@ export const UserContainer = styled.div`
    }
 
    i {
-     line-height: 26px !important;
+     line-height: 26px;
+   }
+
+   @media (max-width: 1024px) {
+     .drop-icon {
+     font-size: 1em;
+     line-height: 42px;
+   }
+
+    .btn-floating.btn-small i {
+      line-height: 24px;
+   }
    }
 `
