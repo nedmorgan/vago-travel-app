@@ -14,6 +14,7 @@ export default class LogIn extends Component {
     createdUser: {},
     isSignedIn: false,
     redirectToUserPage: false,
+    hideButton: true,
   }
 
   createUser = () => {
@@ -22,6 +23,17 @@ export default class LogIn extends Component {
     }).then((res) => {
       this.setState({ redirectToUserPage: true, isSignedIn: true, createdUser: res.data })
     })
+  }
+
+  showButton = () => {
+    let userName = this.state.user.name
+    let userPass = this.state.user.password
+    if (userName !== '' && userPass !== '') {
+      this.setState({ hideButton: false })
+    } else {
+      this.setState({ hideButton: true })
+      return
+    }
   }
 
   handleChange = (e) => {
@@ -51,6 +63,7 @@ export default class LogIn extends Component {
                 id="name"
                 type="text"
                 name="name"
+                onKeyUp={this.showButton}
                 onChange={this.handleChange}
                 value={this.state.user.name}
               />
@@ -64,12 +77,13 @@ export default class LogIn extends Component {
                 id="password"
                 type="password"
                 name="password"
+                onKeyUp={this.showButton}
                 onChange={this.handleChange}
                 value={this.state.user.password}
               />
             </div>
           </div>
-          <button className="waves-effect waves-light btn">Sign Up</button>
+          <button className={`waves-effect waves-light btn ${this.state.hideButton ? 'hide-button' : null}`}>Sign Up</button>
         </form>
       </LogInContainer>
     )

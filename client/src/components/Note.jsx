@@ -9,13 +9,25 @@ export default class Note extends Component {
       title: '',
       description: '',
     },
-    currentUser: {}
+    currentUser: {},
+    hideButton: true,
   }
 
   toggleNotesForm = () => {
     this.setState((state, props) => {
       return ({ displayNoteForm: !state.displayNoteForm })
     })
+  }
+
+  showButton = () => {
+    let noteTitle = this.state.note.title
+    let noteDes = this.state.note.description
+    if (noteTitle !== '' && noteDes !== '') {
+      this.setState({ hideButton: false })
+    } else {
+      this.setState({ hideButton: true })
+      return
+    }
   }
 
   handleChange = (e) => {
@@ -46,6 +58,7 @@ export default class Note extends Component {
                   type="text"
                   className="tip-title validate"
                   onChange={this.handleChange}
+                  onKeyUp={this.showButton}
                   value={this.state.note.title}></input>
                 <label htmlFor="title">Tip Title</label>
               </div>
@@ -56,11 +69,12 @@ export default class Note extends Component {
                     name="description"
                     className="note-body materialize-textarea"
                     onChange={this.handleChange}
+                    onKeyUp={this.showButton}
                     value={this.state.note.description}></textarea>
                   <label htmlFor="title">Description</label>
                 </div>
               </div>
-              <button className="note-button">Add Note</button>
+              <button className={`note-button ${this.state.hideButton ? 'hide-button' : null}`}>Add Note</button>
             </form>
             :
             this.props.notes.map((note, i) => {

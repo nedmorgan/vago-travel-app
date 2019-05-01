@@ -18,6 +18,10 @@ export const LogInContainer = styled.div`
     font-family: 'BioRhyme', serif;
   }
 
+  .hide-button {
+    display: none;
+  }
+
   .form-container {
     margin-left: 2vw;
     width: 50%;

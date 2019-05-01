@@ -35,9 +35,19 @@ export const NoteContainer = styled.div`
 
   .note-button {
     border: 2px solid whitesmoke;
-    border-radius: 5%;
+    border-radius: 5px;
     background: none;
     color: whitesmoke;
+  }
+
+  .note-button:hover {
+    color: #149CEA;
+    cursor: pointer;
+    border: 2px solid #149CEA;
+  }
+
+  .hide-button {
+    display: none;
   }
 
   .add-icon {
@@ -67,10 +77,12 @@ export const NoteContainer = styled.div`
 
   .delete-icon:hover {
     cursor: pointer;
+    color: tomato;
   }
 
   .add-icon:hover {
     cursor: pointer;
+    color: #149CEA;
   }
 
 .title-container {
@@ -135,6 +147,26 @@ export const NoteContainer = styled.div`
 
   .delete-icon {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .row {
+    right: 5vw;
+  }
+
+  .add-icon {
+    font-size: 25px;
+    line-height: 30px;
+    margin-right: 2px;
+  }
+
+  .delete-icon {
+    font-size: 25px;
+  }
+
+  .note-body {
+    font-size: 1.25em;
   }
 }
 `
