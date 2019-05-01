@@ -66,4 +66,20 @@ h1, h2, .signup-link {
    }
 }
 
+@media (max-width: 1024px) {
+   h1 {
+     font-size: 4.25em;
+     margin-top: 3em;
+   }
+
+   h2 {
+     font-size: 2.25em;
+   }
+
+   .airplane-div {
+     bottom: 70vw;
+     left: -10vw;
+   }
+}
+
 `
