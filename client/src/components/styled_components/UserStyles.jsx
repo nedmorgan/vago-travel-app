@@ -99,9 +99,16 @@ export const UserContainer = styled.div`
      height: 24px !important;
    } 
 
-   .drop-icon {
+   #drp-icon-fav {
      display: initial;
      margin-right: 0;
+     line-height: 24px;
+   }
+
+   #drp-icon-cty {
+     display: initial;
+     margin-right: 0;
+     line-height: 24px;
    }
 
    i {

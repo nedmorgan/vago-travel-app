@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 import { fadeInDown } from 'react-animations'
 
 export const fadeIn = keyframes`${fadeInDown}`
@@ -7,7 +7,7 @@ export const CountryListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 95vw;
-  animation: .5s ${fadeIn};
+  animation: 0.5s ${fadeIn};
 
   .country-button {
     margin: 1vw;
@@ -19,35 +19,33 @@ export const CountryListContainer = styled.div`
     position: absolute;
   }
 
-  @media (max-width: 768px) {
-   .remove-button {
-     margin-left: -6vw;
-     width: 24px;
-     height: 24px;
-   } 
+  @media (max-width: 576px) {
+    #remove-btn {
+      margin-left: -6vw;
+    }
 
-   i {
-     line-height: 26px !important;
-   }
+    i {
+      line-height: 26px !important;
+    }
 
-   .remove-font {
-     line-height: 26px;
-   }
+    .remove-font {
+      line-height: 26px;
+    }
   }
 
   @media (max-width: 1024px) {
-   .remove-button {
-     margin-left: -3.5vw;
-     width: 24px;
-     height: 24px;
-   } 
+    .remove-button {
+      margin-left: -3.5vw;
+      width: 24px;
+      height: 24px;
+    }
 
-   i {
-     line-height: 26px !important;
-   }
+    i {
+      line-height: 26px !important;
+    }
 
-   .remove-font {
-     line-height: 26px;
-   }
+    .remove-font {
+      line-height: 26px;
+    }
   }
 `
