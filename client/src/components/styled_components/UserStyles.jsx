@@ -11,8 +11,9 @@ export const UserContainer = styled.div`
   height: auto;
   flex: 1;
   animation: 1s ${fade};
-  
-  h1, h3 {
+
+  h1,
+  h3 {
     font-family: 'BioRhyme', serif;
     color: whitesmoke;
     text-align: center;
@@ -38,7 +39,7 @@ export const UserContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: .5s ${fadeDown};
+    animation: 0.5s ${fadeDown};
   }
 
   .row {
@@ -89,40 +90,41 @@ export const UserContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-   .user-info-flex {
-     width: 90vw;
-     flex-wrap: wrap;
-   } 
+    .user-info-flex {
+      width: 90vw;
+      flex-wrap: wrap;
+    }
 
-   .add-country {
-     width: 24px !important;
-     height: 24px !important;
-   } 
+    .add-country {
+      width: 24px !important;
+      height: 24px !important;
+    }
 
-   #drp-icon-fav {
-     display: initial;
-     margin-right: 0;
-     line-height: 24px;
-   }
+    #drp-icon-fav {
+      display: initial;
+      margin-right: 0;
+      line-height: 24px;
+    }
 
-   #drp-icon-cty {
-     display: initial;
-     margin-right: 0;
-     line-height: 24px;
-   }
+    #drp-icon-cty {
+      display: initial;
+      margin-right: 0;
+      line-height: 24px;
+    }
 
-   i {
-     line-height: 26px;
-   }
+    i {
+      line-height: 26px;
+    }
+  }
 
-   @media (max-width: 1024px) {
-     .drop-icon {
-     font-size: 1em;
-     line-height: 42px;
-   }
+  @media (max-width: 1024px) {
+    .drop-icon {
+      font-size: 1em;
+      line-height: 42px;
+    }
 
     .btn-floating.btn-small i {
       line-height: 24px;
-   }
-   }
+    }
+  }
 `
